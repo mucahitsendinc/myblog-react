@@ -19,7 +19,7 @@ const AboutItems=()=>{
     phone:maindata[6].info
 
   }
-  console.log(maindata)
+  
   return(
     
     <>

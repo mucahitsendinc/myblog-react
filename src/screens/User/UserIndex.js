@@ -21,8 +21,11 @@ import { MainContext,useContext } from '../../Context'
 const UserIndex=(props)=>{
   
   const [open,setOpen]=useState(true)
+
   const {maindata} = useContext(MainContext)
   
+  document.title = "Mücahit Sendinç"
+
   const getPage=()=>{
     
     switch (props.page) {

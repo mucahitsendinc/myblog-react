@@ -42,11 +42,11 @@ const App=()=>{
 
   useLayoutEffect(() => {
 
-    axios.post(process.env.REACT_APP_PROXY_URL+''+process.env.REACT_APP_API_MAIN_INFO, {},{headers:{'Content-Type':'application/json'}}).then(function (results) { setMainData(results.data.data) })
+    axios.post(process.env.REACT_APP_PROXY_URL+''+process.env.REACT_APP_API_MAIN_INFO, {},{headers:{'Content-Type':'application/json','Access-Control-Allow-Origin' : '*'}}).then(function (results) { setMainData(results.data.data) })
     
-    axios.post(process.env.REACT_APP_PROXY_URL+''+process.env.REACT_APP_API_ABOUT_INFO, {},{headers:{'Content-Type':'application/json'}}).then(function (results) { setAboutData(results.data.data) })
+    axios.post(process.env.REACT_APP_PROXY_URL+''+process.env.REACT_APP_API_ABOUT_INFO, {},{headers:{'Content-Type':'application/json','Access-Control-Allow-Origin' : '*'}}).then(function (results) { setAboutData(results.data.data) })
       
-    axios.post(process.env.REACT_APP_PROXY_URL+''+process.env.REACT_APP_API_BLOGS, {},{headers:{'Content-Type':'application/json'}}).then(function (results) { setData(results.data.data) })
+    axios.post(process.env.REACT_APP_PROXY_URL+''+process.env.REACT_APP_API_BLOGS, {},{headers:{'Content-Type':'application/json','Access-Control-Allow-Origin' : '*'}}).then(function (results) { setData(results.data.data) })
 
   }, [])
 

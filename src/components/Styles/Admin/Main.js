@@ -16,8 +16,9 @@ const Content = styled.div`
   width:${(props)=>props.open==true ? '75vw' : '97vw'};
   color:${({theme})=>theme.textColor};
   @media only screen and (max-width:750px){
-    width:100vw;
     top:50px;
+    width:100vw;
+    left:0;
   }
 `
 export {

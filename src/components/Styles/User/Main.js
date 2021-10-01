@@ -16,6 +16,7 @@ const Content = styled.div`
   color:${({theme})=>theme.textColor};
   @media only screen and (max-width:750px){
     width:100vw;
+    display:${(props)=>props.open==true ? 'none' : 'block'};
     top:50px;
   }
 `

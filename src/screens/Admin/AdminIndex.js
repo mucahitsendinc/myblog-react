@@ -49,6 +49,8 @@ import AnnualReport from './Analys/AnnualReport'
 const AdminIndex=(props)=>{
   
   const [open,setOpen]=useState(true)
+  
+  document.title = "Blog Yönetim Paneli - Mücahit Sendinç"
 
   const getPage=()=>{
     

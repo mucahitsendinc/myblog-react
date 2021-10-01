@@ -13,52 +13,15 @@ const Menu = styled.div`
   z-index:10;
   transition:1200ms all;
   @media only screen and (max-width:750px){
-    overflow:none;
-    width:100vw;
-    height:100%;
+    width:100vw!important;
+    height:100vh!important;
     border-right:0px;
     left:${(props)=>props.open==true ? '0vw' : '-100vw'};
   }
 `
 
-const HamburgerMenu = styled.div`
-  display:none;
-  position:fixed;
-  top:0;left:0;
-  height:50px;width:50px;
-  background-color:#eee;
-  z-index:10;
-  cursor:pointer;
-  
-  transition:600ms all;
-  &:hover{
-    background-color:#ddd;
-  }
-  div{
-    width:25px;
-    margin-left:10px;
-    margin-top:0px;
-  }
-  font-size:32px;
-  @media only screen and (max-width:750px){
-    display:block;
-  }
-`
 
-const ResponsiveMenu = styled.div`
-  display:${(props)=>props.status==true ? "block" : "none"};
-  width:100vw;height:100vh;background-color:${({theme})=>theme.backgroundColor};
-  position:fixed;
-  background-image:${({theme})=>theme.menuBackgroundImage};
-  background-size:cover;
-  top:0;
-  left:0;
-  right:0;
-  z-index:10;
-  @media only screen and (max-width>750px){
-    display:none;
-  }
-`
+
 
 const MenuCloser = styled.div`
   position:fixed;
@@ -83,6 +46,7 @@ const MenuCloser = styled.div`
 
 const SetMenu=styled.div`
   height:100vh;
+  
 `
 
 const MenuContainer = styled.div`
@@ -90,6 +54,7 @@ const MenuContainer = styled.div`
   @media only screen and (max-width:750px){
     border-right:0px;
     width:100vw;
+    
   }
 `
 
@@ -113,7 +78,8 @@ const MenuImage = styled.div`
     }
   }
   @media only screen and (max-width:750px){
-    margin-top:5vh;
+    margin-top:5vh;top:5vh;
+    
     width:100vw;
     img{
       width:20vw;
@@ -204,9 +170,6 @@ const ThemeChanger=styled.div`
 `
 
 export  {
-  HamburgerMenu,
-
-  ResponsiveMenu,
 
   Menu,
 
