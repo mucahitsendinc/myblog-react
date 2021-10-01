@@ -2,23 +2,24 @@ import styled from "styled-components";
 
 const Container = styled.div`
   width:100vw;
-  background-color:#555;
-  position:relative;
+  display:flex;
+  height:100%;
 `
 
 const Content = styled.div`
   position:absolute;
+  left:${(props)=>props.open==true ? '25vw' : '3vw'};
+  top:50px;
   overflow-x:hidden;
-  width:75vw;
-  right:0;
-  top:0;
+  height:100%;
+  transition:600ms all;
+  width:${(props)=>props.open==true ? '75vw' : '97vw'};
   color:${({theme})=>theme.textColor};
   @media only screen and (max-width:750px){
     width:100vw;
     top:50px;
   }
 `
-
 export {
 
   Content,

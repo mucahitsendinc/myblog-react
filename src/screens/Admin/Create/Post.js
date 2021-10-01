@@ -1,21 +1,17 @@
 import React from 'react'
 
-import Header from '../../../components/Admin/Menu'
-
-import {Container} from '../../../components/Styles/Admin/Main'
-
-const Post=()=>{
+const CreatePost=()=>{
 
   return (
-  
-    <Container>
-  
-      <Header/>
       
-    </Container>
-  
+      <>
+
+        create post
+
+      </>
+
   )
 
 }
 
-export default Post
+export default CreatePost

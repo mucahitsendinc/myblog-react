@@ -1,18 +1,14 @@
 import React from 'react'
 
-import Header from '../../../components/Admin/Menu'
-
-import {Container} from '../../../components/Styles/Admin/Main'
-
 const ArchiveRecommends=()=>{
 
   return (
   
-    <Container>
+    <>
   
-      <Header/>
+      archive recommeds
   
-    </Container>
+    </>
   
   )
 

@@ -20,7 +20,7 @@ const Items=(props)=>{
 
   const [drop,setDrop]=useState(
 
-    Location.pathname.indexOf('paylasim')!=-1 ? 'paylasimlari-yonet' :
+    Location.pathname.indexOf('paylasim')!=-1 && Location.pathname.indexOf('yeni')==-1 ? 'paylasimlari-yonet' :
 
     (
 
@@ -60,7 +60,7 @@ const Items=(props)=>{
 
       setActive(
 
-        Location.pathname.indexOf('paylasim')!=-1 ? 'paylasimlari-yonet' :
+        Location.pathname.indexOf('paylasim')!=-1 && Location.pathname.indexOf('yeni')==-1 ? 'paylasimlari-yonet' :
 
         (
 
@@ -98,7 +98,7 @@ const Items=(props)=>{
 
       setActive(
 
-        Location.pathname.indexOf('paylasim')!=-1 ? (
+        Location.pathname.indexOf('paylasim')!=-1 && Location.pathname.indexOf('yeni')==-1 ? (
 
           Location.pathname.indexOf('aktif')!=-1 ? 'aktif-paylasimlar' : (
 
@@ -175,7 +175,11 @@ const Items=(props)=>{
 
                   Location.pathname.indexOf('yorum')!=-1 ? 'yeni-yorum' : (
 
-                    Location.pathname.indexOf('paylasim')!=-1 ? 'yeni-paylasim' : 'yeni-oneri'
+                    Location.pathname.indexOf('paylasim')!=-1 ? 'yeni-paylasim' : (
+
+                      Location.pathname.indexOf('resim')!=-1 ? 'yeni-resim' : 'yeni-oneri'
+
+                    )
 
                   )
 
@@ -247,11 +251,11 @@ const Items=(props)=>{
 
         </MenuItem>
 
-        <MenuItem onClick={()=>getSmallMenuChecker()} drop={drop=='paylasimlari-yonet' ? true : false} active={ Location.pathname.indexOf('/paylasimlari-yonet')!=-1 || active=='paylasimlari-yonet' && (drop=='' || drop=='paylasimlari-yonet') ? true : false }>
+        <MenuItem onClick={()=>getSmallMenuChecker()} drop={drop=='yeni-icerik' ? true : false} active={ Location.pathname.indexOf('/yeni-icerik')!=-1 || active=='yeni-icerik' && (drop=='' || drop=='yeni-icerik') ? true : false }>
 
           <FontAwesomeIcon icon={faPlus}/>
 
-          <div onClick={()=>setDrop(drop!='paylasimlari-yonet' ? 'paylasimlari-yonet' : '')}>
+          <div onClick={()=>setDrop(drop!='yeni-icerik' ? 'yeni-icerik' : '')}>
 
             Yeni İçerik
 
@@ -278,16 +282,22 @@ const Items=(props)=>{
               <Link  to="/yonetici/yeni-oneri">Yeni Öneri</Link>
 
             </SubMenu>
+
+            <SubMenu activeSub={active==('yeni-resim') ? true : false}>
+
+              <Link  to="/yonetici/yeni-resim">Yeni Resim</Link>
+
+            </SubMenu>
           
           </ul>
           
         </MenuItem>
 
-        <MenuItem onClick={()=>getSmallMenuChecker()} drop={drop=='yeni-icerik' ? true : false} active={ Location.pathname.indexOf('/yeni-icerik')!=-1 || active=='yeni-icerik' && (drop=='' || drop=='yeni-icerik') ? true : false }>
+        <MenuItem onClick={()=>getSmallMenuChecker()} drop={drop=='paylasimlari-yonet' ? true : false} active={ Location.pathname.indexOf('/paylasimlari-yonet')!=-1 || active=='paylasimlari-yonet' && (drop=='' || drop=='paylasimlari-yonet') ? true : false }>
 
           <FontAwesomeIcon icon={faBlogger}/>
 
-          <div onClick={()=>setDrop(drop!='yeni-icerik' ? 'yeni-icerik' : '')}>
+          <div onClick={()=>setDrop(drop!='paylasimlari-yonet' ? 'paylasimlari-yonet' : '')}>
 
             Paylaşımları Yönet
 

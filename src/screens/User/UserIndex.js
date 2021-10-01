@@ -21,7 +21,6 @@ import { MainContext,useContext } from '../../Context'
 const UserIndex=(props)=>{
   
   const [open,setOpen]=useState(true)
-
   const {maindata} = useContext(MainContext)
   
   const getPage=()=>{

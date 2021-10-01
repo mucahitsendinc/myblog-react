@@ -1,21 +1,17 @@
 import React from 'react'
 
-import Header from '../../../components/Admin/Menu'
-
-import {Container} from '../../../components/Styles/Admin/Main'
-
-const Recommended=()=>{
+const CreateRecommended=()=>{
 
   return (
   
-    <Container>
+    <>
   
-      <Header/>
+      create Recommend
       
-    </Container>
+    </>
   
   )
 
 }
 
-export default Recommended
+export default CreateRecommended

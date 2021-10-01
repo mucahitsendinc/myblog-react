@@ -8,9 +8,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import ListItems from './ListItems'
 
-const Header=()=>{
+const Header=(props)=>{
 
-  const [open,setOpen]=useState(true)
+  const {open,setopen}=props
 
   return (
     
@@ -18,11 +18,11 @@ const Header=()=>{
 
       <HeaderContainer open={open}>
 
-        <ListItems open={open} setopen={setOpen} />
+        <ListItems open={open} setopen={setopen} />
 
       </HeaderContainer>
       
-      <CloseHeader open={open} onClick={()=>setOpen(!open)}>
+      <CloseHeader open={open} onClick={()=>setopen(!open)}>
 
         <FontAwesomeIcon  icon={faBars} />
 

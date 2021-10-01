@@ -10,7 +10,7 @@ const Error=(props)=>{
   
     history.push('/')
   
-  }, 2000);
+  }, 4000);
   
   return (
 

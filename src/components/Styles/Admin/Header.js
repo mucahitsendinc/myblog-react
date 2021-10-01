@@ -4,6 +4,7 @@ const HeaderContainer=styled.div`
   position:fixed;
   height:100vh;
   width:25vw;
+  z-index:100;
   left:${(props)=> props.open==true ? '0vw' : '-22vw' };
   background-color:${({theme})=>theme.backgroundColor};
   border-right:${(props)=> props.open==true ? ({theme})=>theme.menuBorderColor : '0px'};

@@ -6,37 +6,7 @@ import { BrowserRouter  as Router,Route,Switch} from "react-router-dom";
 
 import Error from './components/Error/Error'
 
-import Admin from './screens/Admin/Home'
-
-import ArchivePosts from './screens/Admin/Posts/ArchivePosts'
-
-import ActivePosts from './screens/Admin/Posts/ActivePosts'
-
-import Posts from './screens/Admin/Posts/Posts'
-
-import ArchiveComments from './screens/Admin/Comments/ArchiveComments'
-
-import ActiveComments from './screens/Admin/Comments/ActiveComments'
-
-import Comments from './screens/Admin/Comments/Comments'
-
-import Recommends from './screens/Admin/Recommends/Recommends';
-
-import ActiveRecommends from './screens/Admin/Recommends/ActiveRecommends';
-
-import ArchiveRecommends from './screens/Admin/Recommends/ArchiveRecommends';
-
-import Analys from './screens/Admin/Analys/Analys'
-
-import BasicAnalys from './screens/Admin/Analys/BasicAnalys'
-
-import DailyReport from './screens/Admin/Analys/DailyReport'
-
-import MonthlyReport from './screens/Admin/Analys/MonthlyReport'
-
-import WeeklyReport from './screens/Admin/Analys/WeeklyReport'
-
-import AnnualReport from './screens/Admin/Analys/AnnualReport'
+import AdminIndex from './screens/Admin/AdminIndex'
 
 import AdminLogin from './screens/Admin/Login'
 
@@ -67,9 +37,7 @@ const App=()=>{
   const [login,setLogin]=useState(localStorage.getItem('login')=="true" ? true : false)
 
   useEffect(() => {
-
     localStorage.setItem('theme',theme)
-
   }, [theme])
 
   useLayoutEffect(() => {
@@ -112,37 +80,45 @@ const App=()=>{
                   
                   <Route path="/404" component={()=> <Error code="404" message="Böyle bir sayfa bulunamadı" />} />
           
-                  <Route exact path="/yonetici"  component={()=> login==true ? <Admin/>  : <Error code="404" message="Böyle bir sayfa bulunamadı" /> }  />
+                  <Route exact path="/yonetici"  component={()=> login==true ? <AdminIndex page="Home" />  : <Error code="404" message="Böyle bir sayfa bulunamadı" /> }  />
 
-                  <Route path="/yonetici/tum-paylasimlar"  component={()=> login==true ? <Posts/>  : <Error code="404" message="Böyle bir sayfa bulunamadı" /> }  />
+                  <Route path="/yonetici/tum-paylasimlar"  component={()=> login==true ? <AdminIndex page="Posts" />  : <Error code="404" message="Böyle bir sayfa bulunamadı" /> }  />
 
-                  <Route path="/yonetici/aktif-paylasimlar"  component={()=> login==true ? <ActivePosts/>  : <Error code="404" message="Böyle bir sayfa bulunamadı" /> }  />
+                  <Route path="/yonetici/aktif-paylasimlar"  component={()=> login==true ? <AdminIndex page="ActivePosts" />  : <Error code="404" message="Böyle bir sayfa bulunamadı" /> }  />
 
-                  <Route path="/yonetici/arsiv-paylasimlar"  component={()=> login==true ? <ArchivePosts/>  : <Error code="404" message="Böyle bir sayfa bulunamadı" /> }  />
+                  <Route path="/yonetici/arsiv-paylasimlar"  component={()=> login==true ? <AdminIndex page="ArchivePosts" />  : <Error code="404" message="Böyle bir sayfa bulunamadı" /> }  />
 
-                  <Route path="/yonetici/tum-yorumlar"  component={()=> login==true ? <Comments/>  : <Error code="404" message="Böyle bir sayfa bulunamadı" /> }  />
+                  <Route path="/yonetici/yeni-paylasim"  component={()=> login==true ? <AdminIndex page="CreatePost" />  : <Error code="404" message="Böyle bir sayfa bulunamadı" /> }  />
 
-                  <Route path="/yonetici/aktif-yorumlar"  component={()=> login==true ? <ActiveComments/>  : <Error code="404" message="Böyle bir sayfa bulunamadı" /> }  />
+                  <Route path="/yonetici/yeni-yorum"  component={()=> login==true ? <AdminIndex page="CreateComment" />  : <Error code="404" message="Böyle bir sayfa bulunamadı" /> }  />
 
-                  <Route path="/yonetici/arsiv-yorumlar"  component={()=> login==true ? <ArchiveComments/>  : <Error code="404" message="Böyle bir sayfa bulunamadı" /> }  />
-
-                  <Route path="/yonetici/tum-onerilenler"  component={()=> login==true ? <Recommends/>  : <Error code="404" message="Böyle bir sayfa bulunamadı" /> }  />
-
-                  <Route path="/yonetici/aktif-onerilenler"  component={()=> login==true ? <ActiveRecommends/>  : <Error code="404" message="Böyle bir sayfa bulunamadı" /> }  />
-
-                  <Route path="/yonetici/arsiv-onerilenler"  component={()=> login==true ? <ArchiveRecommends/>  : <Error code="404" message="Böyle bir sayfa bulunamadı" /> }  />
-
-                  <Route path="/yonetici/istatistik/basit-analiz"  component={()=> login==true ? <BasicAnalys/>  : <Error code="404" message="Böyle bir sayfa bulunamadı" /> }  />
-
-                  <Route path="/yonetici/istatistik/gelismis-analiz"  component={()=> login==true ? <Analys/>  : <Error code="404" message="Böyle bir sayfa bulunamadı" /> }  />
-
-                  <Route path="/yonetici/istatistik/gunluk-rapor"  component={()=> login==true ? <DailyReport/>  : <Error code="404" message="Böyle bir sayfa bulunamadı" /> }  />
-
-                  <Route path="/yonetici/istatistik/haftalik-rapor"  component={()=> login==true ? <WeeklyReport/>  : <Error code="404" message="Böyle bir sayfa bulunamadı" /> }  />
-
-                  <Route path="/yonetici/istatistik/aylik-rapor"  component={()=> login==true ? <MonthlyReport/>  : <Error code="404" message="Böyle bir sayfa bulunamadı" /> }  />
+                  <Route path="/yonetici/yeni-oneri"  component={()=> login==true ? <AdminIndex page="CreateRecommended" />  : <Error code="404" message="Böyle bir sayfa bulunamadı" /> }  />
                   
-                  <Route path="/yonetici/istatistik/yillik-rapor"  component={()=> login==true ? <AnnualReport/>  : <Error code="404" message="Böyle bir sayfa bulunamadı" /> }  />
+                  <Route path="/yonetici/yeni-resim"  component={()=> login==true ? <AdminIndex page="CreateImage" />  : <Error code="404" message="Böyle bir sayfa bulunamadı" /> }  />
+
+                  <Route path="/yonetici/tum-yorumlar"  component={()=> login==true ? <AdminIndex page="Comments" />  : <Error code="404" message="Böyle bir sayfa bulunamadı" /> }  />
+
+                  <Route path="/yonetici/aktif-yorumlar"  component={()=> login==true ? <AdminIndex page="ActiveComments" />  : <Error code="404" message="Böyle bir sayfa bulunamadı" /> }  />
+
+                  <Route path="/yonetici/arsiv-yorumlar"  component={()=> login==true ? <AdminIndex page="ArchiveComments" />  : <Error code="404" message="Böyle bir sayfa bulunamadı" /> }  />
+
+                  <Route path="/yonetici/tum-onerilenler"  component={()=> login==true ? <AdminIndex page="Recommends" />  : <Error code="404" message="Böyle bir sayfa bulunamadı" /> }  />
+
+                  <Route path="/yonetici/aktif-onerilenler"  component={()=> login==true ? <AdminIndex page="ActiveRecommends" />  : <Error code="404" message="Böyle bir sayfa bulunamadı" /> }  />
+
+                  <Route path="/yonetici/arsiv-onerilenler"  component={()=> login==true ? <AdminIndex page="ArchiveRecommends" />  : <Error code="404" message="Böyle bir sayfa bulunamadı" /> }  />
+
+                  <Route path="/yonetici/istatistik/basit-analiz"  component={()=> login==true ? <AdminIndex page="BasicAnalys" />  : <Error code="404" message="Böyle bir sayfa bulunamadı" /> }  />
+
+                  <Route path="/yonetici/istatistik/gelismis-analiz"  component={()=> login==true ? <AdminIndex page="Analys" />  : <Error code="404" message="Böyle bir sayfa bulunamadı" /> }  />
+
+                  <Route path="/yonetici/istatistik/gunluk-rapor"  component={()=> login==true ? <AdminIndex page="DailyReport" />  : <Error code="404" message="Böyle bir sayfa bulunamadı" /> }  />
+
+                  <Route path="/yonetici/istatistik/haftalik-rapor"  component={()=> login==true ? <AdminIndex page="WeeklyReport" />  : <Error code="404" message="Böyle bir sayfa bulunamadı" /> }  />
+
+                  <Route path="/yonetici/istatistik/aylik-rapor"  component={()=> login==true ? <AdminIndex page="MonthlyReport" />  : <Error code="404" message="Böyle bir sayfa bulunamadı" /> }  />
+                  
+                  <Route path="/yonetici/istatistik/yillik-rapor"  component={()=> login==true ? <AdminIndex page="AnnualReport" />  : <Error code="404" message="Böyle bir sayfa bulunamadı" /> }  />
                   
                   <Route path="/cikis-yap" component={()=> <LogOut/> } />
 
