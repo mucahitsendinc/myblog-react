@@ -10,7 +10,6 @@ import ActivityIndicator from 'react-activity-indicator'
 const CreateImage=(props)=>{
 
   const [success,setSuccess]=useState(0)
-
   const [error,setError]=useState(0)
 
   const [post,setPost]=useState(false)
@@ -37,7 +36,6 @@ const CreateImage=(props)=>{
   }, [success,error])
 
   const createImage=(file)=>{
-
     try {
       let reader = new FileReader();
 
@@ -48,30 +46,28 @@ const CreateImage=(props)=>{
       };
 
       reader.readAsDataURL(file);
-    } catch (error) {
-      console.log(error)
+    } catch (er) {
+      console.log(er)
     }
 
   }
 
   const onFileUpload=()=>{
     setPost(true)
+    setSuccess(0)
     const formData = {file: file}
-
+    let err=false
     axios.post(process.env.REACT_APP_PROXY_URL+''+process.env.REACT_APP_API_SEND_IMAGE,
     {formData},
     {headers:{'Content-Type':'application/json','Authorization':"Bearer "+localStorage.getItem('token')}})
     .then(function (results) { 
       setPost(false)
-      setError(0)
       setSuccess(59)
     }).catch((e)=>{
       setPost(false)
-      setSuccess(0)
       setError(59)
-      console.log(e)
     })
-    
+     
   }
   
   useEffect(() => {
@@ -84,6 +80,7 @@ const CreateImage=(props)=>{
     if(post==false){
       uploadInput.current.click()
     }
+
   }
 
   return (
@@ -107,7 +104,7 @@ const CreateImage=(props)=>{
 
         </div>
 
-        <ImageUpload success={success} errorr={error}>
+        <ImageUpload success={success} error={error}>
           <form ref={uploadForm}  method="POST" onSubmit={(e)=> e.preventDefault()} enctype="multipart/form-data">
             <input ref={uploadInput} type="file" hidden onChange={onFileChange} />
             <label className="fileManager" onClick={showFileManager}>
@@ -125,7 +122,22 @@ const CreateImage=(props)=>{
                 />
                 :
                 <>
-                Görsel yüklemek için tıkla!
+                {error!=0 ? 
+                <>
+                  <span className="eText">Geçerli bir dosya seçin!</span>
+                </>
+                :
+                (
+                  success!=0 ? 
+                  <>
+                  <span className="sText">Dosya başarı ile yüklendi!</span>
+                  </>
+                  :
+                  <>
+                  Görsel yüklemek için tıkla!
+                  </>
+                )
+                }
                 </>
               }
               

@@ -4,7 +4,7 @@ import {MenuItemList,MenuItem,SubMenu,LogOut} from '../../Styles/Admin/Header'
 
 import {Link,useLocation,useHistory} from 'react-router-dom'
 
-import { faArrowDown,faThumbsUp,faComment,faHome,faChartArea,faPlus,faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
+import { faArrowDown,faThumbsUp,faComment,faHome,faChartArea,faPlus,faSignOutAlt,faCog } from '@fortawesome/free-solid-svg-icons'
 
 import {faBlogger} from '@fortawesome/free-brands-svg-icons'
 
@@ -40,7 +40,13 @@ const Items=(props)=>{
 
             (
 
-              ''
+              Location.pathname.indexOf('genel-ayarlar')!=-1 ? 'genel-ayarlar' :
+
+              (
+
+                'yonetici'
+
+              )
 
             )
 
@@ -80,7 +86,13 @@ const Items=(props)=>{
 
                 (
 
-                  ''
+                  Location.pathname.indexOf('genel-ayarlar')!=-1 ? 'genel-ayarlar' :
+
+                  (
+
+                    'yonetici'
+
+                  )
 
                 )
 
@@ -153,7 +165,9 @@ const Items=(props)=>{
 
                           Location.pathname.indexOf('yillik')!=-1 ? 'yillik-rapor' : 
 
-                          'yonetici'
+                          (
+                            Location.pathname.indexOf('genel-ayarlar')!=-1 ? 'genel-ayarlar' : 'yonetici'
+                          )
 
                         )
 
@@ -187,7 +201,9 @@ const Items=(props)=>{
 
                 :
 
-                'yonetici'
+                (
+                  Location.pathname.indexOf('genel-ayarlar')!=-1 ? 'genel-ayarlar' : 'yonetici'
+                )
 
               )
 
@@ -248,6 +264,14 @@ const Items=(props)=>{
           <FontAwesomeIcon icon={faHome}/>
 
           <Link to="/yonetici">Ana Sayfa</Link>
+
+        </MenuItem>
+
+        <MenuItem onClick={()=>getSmallMenuChecker('/yonetici/genel-ayarlar')} active={ active==('genel-ayarlar') && (drop=='' || drop=='genel-ayarlar') ? true : false }>
+
+          <FontAwesomeIcon icon={faCog}/>
+
+          <Link to="/yonetici/genel-ayarlar">Genel Ayarlar</Link>
 
         </MenuItem>
 

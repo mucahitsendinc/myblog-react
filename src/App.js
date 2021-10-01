@@ -56,7 +56,7 @@ const App=()=>{
     {
       maindata!=null && aboutData!=null && data!=null ? 
 
-      <MainContext.Provider value={{theme,setTheme,maindata,aboutData,data,login,setLogin}}>
+      <MainContext.Provider value={{theme,setTheme,maindata,setMainData,aboutData,data,login,setLogin}}>
       
         <ThemeProvider theme={theme==='light' ? LightTheme : DarkTheme}>
 
@@ -81,6 +81,8 @@ const App=()=>{
                   <Route path="/404" component={()=> <Error code="404" message="Böyle bir sayfa bulunamadı" />} />
           
                   <Route exact path="/yonetici"  component={()=> login==true ? <AdminIndex page="Home" />  : <Error code="404" message="Böyle bir sayfa bulunamadı" /> }  />
+
+                  <Route path="/yonetici/genel-ayarlar"  component={()=> login==true ? <AdminIndex page="MainSettings" />  : <Error code="404" message="Böyle bir sayfa bulunamadı" /> }  />
 
                   <Route path="/yonetici/tum-paylasimlar"  component={()=> login==true ? <AdminIndex page="Posts" />  : <Error code="404" message="Böyle bir sayfa bulunamadı" /> }  />
 

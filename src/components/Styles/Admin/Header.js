@@ -92,6 +92,7 @@ const MenuItem=styled.li`
   align-items:center;
   margin-top:3px;
   background-color:${({theme})=>theme.AdminMenuItemBackground};
+  background-color: ${(props)=>props.active==true || props.drop==true ? 'rgba(255,255,255,.3)' : ({theme})=>theme.AdminMenuItemBackground };
   &>a{
     display:block;
     width:100%;

@@ -8,6 +8,8 @@ import Footer from '../../components/User/Footer/'
 
 import Admin from './Home'
 
+import MainSettings from './MainSettings'
+
 import ArchivePosts from './Posts/ArchivePosts'
 
 import ActivePosts from './Posts/ActivePosts'
@@ -61,6 +63,13 @@ const AdminIndex=(props)=>{
         return(
           
           <Admin />
+
+        )
+      case 'MainSettings':
+
+        return(
+          
+          <MainSettings />
 
         )
       case 'ArchivePosts':
