@@ -68,12 +68,12 @@ const Settings=styled.div`
   .SettingsFormButton{
     width:49%;
     margin-left:29%;
-    input{
+    input,textarea{
       padding:2.5%;
       transition:600ms all;
       width:100%;
     }
-    input:hover{
+    input:hover,textarea:hover{
       background-color:#27ae60;
       color:#fff;
     }
@@ -83,6 +83,7 @@ const Settings=styled.div`
     margin-left:15%;
     margin-bottom:20px;
     position:relative;
+    display:flex;
     .Images{
       position:absolute;
       right:12%;
@@ -100,10 +101,18 @@ const Settings=styled.div`
       padding:2.5% 1.5%;
 
     }
-    input{
+    input,textarea{
       padding:2.5%;
       padding-right:5%;
       width:70%;
+    }
+    textarea{
+      resize: none;
+      height:450px;
+      white-space: nowrap;
+      padding: 15px;
+      overflow-y: scroll;
+      overflow-x: scroll;
     }
   }
   @media only screen and (max-width:750px){
@@ -114,7 +123,7 @@ const Settings=styled.div`
         right:12%;
         top:20%;
       }
-      input{
+      input,textarea{
         width:60%;
         padding-right:10%;
       }

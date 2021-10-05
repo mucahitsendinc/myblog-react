@@ -5,11 +5,13 @@ import axios from 'axios'
 import {AdminContent,ImageUpload} from '../../../components/Styles/Admin/Content'
 
 import { useHistory } from 'react-router-dom';
+
 import ActivityIndicator from 'react-activity-indicator'
 
 const CreateImage=(props)=>{
 
   const [success,setSuccess]=useState(0)
+
   const [error,setError]=useState(0)
 
   const [post,setPost]=useState(false)

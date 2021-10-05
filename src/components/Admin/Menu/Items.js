@@ -24,7 +24,7 @@ const Items=(props)=>{
 
     (
 
-      Location.pathname.indexOf('yorumlar')!=-1 ? 'yorumlari-yonet' :
+      Location.pathname.indexOf('yorumlar')!=-1 ? 'yorumlari-yonet' : 
 
       (
 
@@ -62,160 +62,145 @@ const Items=(props)=>{
 
   useEffect(() => {
 
+    const path=Location.pathname;
+
+    let active="yonetici";
+    
     if(drop==''){
 
-      setActive(
+      if (path.indexOf('paylasim')!=-1 && path.indexOf('yeni')==-1) {
 
-        Location.pathname.indexOf('paylasim')!=-1 && Location.pathname.indexOf('yeni')==-1 ? 'paylasimlari-yonet' :
+        active='paylasimlari-yonet'
 
-        (
+      }else if (path.indexOf('yorumlar'!=-1)) {
 
-          Location.pathname.indexOf('yorumlar')!=-1 ? 'yorumlari-yonet' :
+        active="yorumlari-yonet"
 
-          (
+      }else if (path.indexOf('onerilenler'!=-1)) {
 
-            Location.pathname.indexOf('onerilenler')!=-1 ? 'onerilenleri-yonet' :
+        active='onerilenleri-yonet'
 
-            (
+      }else if (path.indexOf('istatistik'!=-1)) {
 
-              Location.pathname.indexOf('istatistik')!=-1 ? 'istatistikler' :
+        active='istatistikler'
 
-              (
+      }else if (path.indexOf('yeni'!=-1)) {
 
-                Location.pathname.indexOf('yeni')!=-1 ? 'yeni-icerik' :
+        active='yeni-icerik'
 
-                (
+      }else if (path.indexOf('genel-ayarlar'!=-1)) {
 
-                  Location.pathname.indexOf('genel-ayarlar')!=-1 ? 'genel-ayarlar' :
+        active='genel-ayarlar'
 
-                  (
+      }else{
 
-                    'yonetici'
+        active="yonetici"
 
-                  )
-
-                )
-
-              )
-
-            )
-
-          )
-
-        )
-
-      )
+      }
 
     }else{
 
-      setActive(
+      if (path.indexOf('paylasim')!=-1 && Location.pathname.indexOf('yeni')==-1) {
 
-        Location.pathname.indexOf('paylasim')!=-1 && Location.pathname.indexOf('yeni')==-1 ? (
+        if(path.indexOf('aktif')!=-1){
 
-          Location.pathname.indexOf('aktif')!=-1 ? 'aktif-paylasimlar' : (
+          active='aktif-paylasimlar'
 
-            Location.pathname.indexOf('arsiv')!=-1 ? 'arsiv-paylasimlar' : 'tum-paylasimlar'
+        }else if (path.indexOf('arsiv')!=-1) {
 
-          )
+          active='arsiv-paylasimlar'
 
-        )
+        }else{
 
-        :
+          active='tum-paylasimlar'
 
-        (
+        }
 
-          Location.pathname.indexOf('yorumlar')!=-1 ? (
+      }else if (path.indexOf('yorumlar')!=-1) {
 
-            Location.pathname.indexOf('aktif')!=-1 ? 'aktif-yorumlar' : (
+        if(path.indexOf('aktif')!=-1){
 
-              Location.pathname.indexOf('arsiv')!=-1 ? 'arsiv-yorumlar' : 'tum-yorumlar'
-            )
+          active='aktif-yorumlar'
 
-          )
+        }else if (path.indexOf('arsiv')!=-1) {
 
-          :
+          active='arsiv-yorumlar'
 
-          (
+        }else{
 
-            Location.pathname.indexOf('onerilenler')!=-1 ? (
+          active='tum-yorumlar'
 
-              Location.pathname.indexOf('aktif')!=-1 ? 'aktif-onerilenler' : (
+        }
 
-                Location.pathname.indexOf('arsiv')!=-1 ? 'arsiv-onerilenler' : 'tum-onerilenler'
+      }else if (path.indexOf('onerilenler')!=-1) {
 
-              )
+        if(path.indexOf('aktif')!=-1){
 
-            )
+          active='aktif-onerilenler'
 
-            :
+        }else if (path.indexOf('arsiv')!=-1) {
 
-            (
+          active='arsiv-onerilenler'
 
-              Location.pathname.indexOf('istatistik')!=-1 ? (
+        }else{
 
-                Location.pathname.indexOf('basit')!=-1 ? 'basit-analiz' : (
+          active='tum-onerilenler'
 
-                  Location.pathname.indexOf('gelismis')!=-1 ? 'gelismis-analiz' : (
+        }
 
-                    Location.pathname.indexOf('gunluk')!=-1 ? 'gunluk-rapor' : (
+      }else if (path.indexOf('istatistik')!=-1) {
 
-                      Location.pathname.indexOf('haftalik')!=-1 ? 'haftalik-rapor' : (
+        if(path.indexOf('basit')!=-1){
 
-                        Location.pathname.indexOf('aylik')!=-1 ? 'aylik-rapor' : (
+          active='basit-analiz'
 
-                          Location.pathname.indexOf('yillik')!=-1 ? 'yillik-rapor' : 
+        }else if (path.indexOf('gelismis')!=-1) {
 
-                          (
-                            Location.pathname.indexOf('genel-ayarlar')!=-1 ? 'genel-ayarlar' : 'yonetici'
-                          )
+          active='gelismis-analiz'
 
-                        )
+        }else if (path.indexOf('gunluk')!=-1) {
 
-                      )
+          active='gunluk-rapor'
 
-                    )
+        }else if (path.indexOf('haftalik')!=-1) {
 
-                  )
+          active='haftalik-rapor'
 
-                )
+        }else if (path.indexOf('aylik')!=-1) {
 
-              )
+          active='aylik-rapor'
 
-              :
+        }else if (path.indexOf('yillik')!=-1) {
 
-              (
+          active='yillik-rapor'
 
-                Location.pathname.indexOf('yeni')!=-1 ? (
+        }
 
-                  Location.pathname.indexOf('yorum')!=-1 ? 'yeni-yorum' : (
+      }else if (path.indexOf('yeni')!=-1) {
 
-                    Location.pathname.indexOf('paylasim')!=-1 ? 'yeni-paylasim' : (
+        if(path.indexOf('yorum')!=-1){
 
-                      Location.pathname.indexOf('resim')!=-1 ? 'yeni-resim' : 'yeni-oneri'
+          active='yeni-yorum'
 
-                    )
+        }else if (path.indexOf('paylasim')!=-1) {
 
-                  )
+          active='yeni-paylasim'
 
-                )
+        }else if(path.indexOf('fotograf')!=-1){
 
-                :
+          active='yeni-fotograf'
 
-                (
-                  Location.pathname.indexOf('genel-ayarlar')!=-1 ? 'genel-ayarlar' : 'yonetici'
-                )
+        }else{
 
-              )
+          active='yeni-oneri'
 
-            )
+        }
 
-          )
-
-        )
-
-      )
+      }
 
     }
+
+    setActive(active)
 
   }, [drop])
 
@@ -307,16 +292,16 @@ const Items=(props)=>{
 
             </SubMenu>
 
-            <SubMenu activeSub={active==('yeni-resim') ? true : false}>
+            <SubMenu activeSub={active==('yeni-fotograf') ? true : false}>
 
-              <Link  to="/yonetici/yeni-resim">Yeni Resim</Link>
+              <Link  to="/yonetici/yeni-fotograf">Yeni Fotograf</Link>
 
             </SubMenu>
           
           </ul>
           
         </MenuItem>
-
+      
         <MenuItem onClick={()=>getSmallMenuChecker()} drop={drop=='paylasimlari-yonet' ? true : false} active={ Location.pathname.indexOf('/paylasimlari-yonet')!=-1 || active=='paylasimlari-yonet' && (drop=='' || drop=='paylasimlari-yonet') ? true : false }>
 
           <FontAwesomeIcon icon={faBlogger}/>

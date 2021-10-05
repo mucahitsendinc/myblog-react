@@ -96,7 +96,7 @@ const App=()=>{
 
                   <Route path="/yonetici/yeni-oneri"  component={()=> login==true ? <AdminIndex page="CreateRecommended" />  : <Error code="404" message="Böyle bir sayfa bulunamadı" /> }  />
                   
-                  <Route path="/yonetici/yeni-resim"  component={()=> login==true ? <AdminIndex page="CreateImage" />  : <Error code="404" message="Böyle bir sayfa bulunamadı" /> }  />
+                  <Route path="/yonetici/yeni-fotograf"  component={()=> login==true ? <AdminIndex page="CreateImage" />  : <Error code="404" message="Böyle bir sayfa bulunamadı" /> }  />
 
                   <Route path="/yonetici/tum-yorumlar"  component={()=> login==true ? <AdminIndex page="Comments" />  : <Error code="404" message="Böyle bir sayfa bulunamadı" /> }  />
 
