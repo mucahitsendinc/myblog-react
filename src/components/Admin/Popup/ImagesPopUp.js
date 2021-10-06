@@ -8,7 +8,6 @@ import {PopUp} from '../../Styles/Admin/PopUp'
 import axios from 'axios'
 import ImageUpload from '../ImageUpload';
 const ImagesPopUp=(props)=>{  
-
   const [images,setImages]=useState(null)
   
   const getImages=async()=>{

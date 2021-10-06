@@ -18,9 +18,8 @@ const BlogItem=(props)=> {
 
   
   const link='blogum/'+url
-  
+
   const text="Devamını oku"
-  
   return (
 
     <BlogItemContainer >
@@ -35,7 +34,7 @@ const BlogItem=(props)=> {
 
         <GoBlog text={text} link={link} />
 
-        <Date date={date} />
+        <Date date={date} /> 
 
     </BlogItemContainer>
 
