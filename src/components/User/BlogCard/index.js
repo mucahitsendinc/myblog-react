@@ -35,9 +35,7 @@ const BlogItems=()=> {
     return(
  
       data.slice(currentPage*dataPerPage,currentPage*dataPerPage+dataPerPage).map(function(element){
-        
         return(
-
           <BlogItem key={element.unid} itemData={element} />
 
         )

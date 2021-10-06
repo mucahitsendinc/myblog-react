@@ -26,16 +26,15 @@ const ContentItem=(props)=>{
   
   useLayoutEffect(() => {
 
-    axios.post(process.env.REACT_APP_PROXY_URL+''+process.env.REACT_APP_API_RECOMMENDED, {},{headers:{'Content-Type':'application/json'}}).then(function (response) { setRecommendeds(response.data.data) }) .catch(function (error) { console.log(error); });
-
+    axios.post(process.env.REACT_APP_PROXY_URL+''+process.env.REACT_APP_API_RECOMMENDED, {},{headers:{'Content-Type':'application/json'}}).then(function (response) { console.log(response); setRecommendeds(response.data.data) }) .catch(function (error) { console.log(error); });
+    
   }, [])
 
   useEffect(() => {
 
     setData(null)
     
-    axios.post(process.env.REACT_APP_PROXY_URL+''+process.env.REACT_APP_API_BLOG_DETAIL, { url:location.pathname.replace('/blogum/','') },{headers:{'Content-Type':'application/json'}}).then(function (response) { setData(response.data.data[0]) }) .catch(function (error) { console.log(error) }) 
-  
+    axios.post(process.env.REACT_APP_PROXY_URL+''+process.env.REACT_APP_API_BLOG_DETAIL, { url:location.pathname.replace('/blogum/','') },{headers:{'Content-Type':'application/json'}}).then(function (response) {  setData(response.data.data) }) .catch(function (error) { console.log(error) }) 
   }, [location.pathname])
 
   return (

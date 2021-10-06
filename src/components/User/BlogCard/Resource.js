@@ -10,7 +10,7 @@ const Resource=(props)=> {
     
     <Link to={props.link}>
 
-      <BlogImage src={props.image} />
+      <BlogImage height="250"  src={props.image} />
     
     </Link>
 

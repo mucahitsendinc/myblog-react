@@ -13,6 +13,34 @@ const PopUp=styled.div`
   display:flex;
   justify-content:center;
   align-items:center;
+  .popUp-loading{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+  }
+  label{
+    color:#000;
+  }
+  .imageList{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    align-items:center;
+    max-height:50vh;
+    overflow:scroll;
+    img{
+      background-color:#ccc;
+      border:4px solid #000;
+      cursor:pointer;margin:20px;
+      transition:300ms transform;
+      &:hover{
+        transform:scale(.8);
+        border:4px solid #ccc;
+      }
+    }
+  }
   .content{
     width:70%;
     padding: 20px 0px;
@@ -21,6 +49,7 @@ const PopUp=styled.div`
     .closer{
       position:absolute;
       right:0px;
+      color:#000;
       top:0px;
       padding:5px;
       svg{

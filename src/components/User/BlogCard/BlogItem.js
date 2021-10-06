@@ -14,9 +14,8 @@ import Date from './Date'
 
 const BlogItem=(props)=> {
 
-  const {image,title,date,url,tags} = props.itemData
+  const {image,title,date,url,tags,description} = props.itemData
 
-  const desc=props.description
   
   const link='blogum/'+url
   
@@ -32,7 +31,7 @@ const BlogItem=(props)=> {
 
         <TagList tags={tags} name={url} />
 
-        <Description desc={desc} />
+        <Description desc={description} />
 
         <GoBlog text={text} link={link} />
 

@@ -33,6 +33,20 @@ const AdminContent=styled.div`
     color: ${({theme})=>theme.formInputButtonHoverColor};
     cursor:pointer;
   }
+  .errorArea,.successArea{
+    width:100%;
+    padding:10px 5px;
+    display:flex;justify-content:center;align-items:center;
+    margin:10px 0px;
+  }
+  .errorArea{
+      background-color:rgba(255,0,0,.4);
+      color:#fff;
+  }
+  .successArea{
+      background-color:rgba(0,255,9,1);
+      color:#000;
+  }
 `
 
 const ImageUpload=styled.div`
@@ -90,6 +104,7 @@ const Settings=styled.div`
       top:30%;
       font-size:22px;
       cursor:pointer;
+      color:#000;
       transition:300ms all;
       &:hover{
         color:#ddd;
@@ -115,6 +130,7 @@ const Settings=styled.div`
       overflow-x: scroll;
     }
   }
+  
   @media only screen and (max-width:750px){
     .SettingsFormGroup{
       width:95%;

@@ -13,9 +13,9 @@ const ContentTagList=(props)=> {
 
             return(
 
-              <li key={'comment-tag-'+index}>
+              <li key={'comment-tag-'+index+element.id}>
 
-                {'#'+element}
+                {'#'+element.tag}
 
               </li>
 

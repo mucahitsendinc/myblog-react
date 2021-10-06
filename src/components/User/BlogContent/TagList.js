@@ -10,7 +10,6 @@ const TagList=(props)=> {
       {
         
         props.tags.map((element,index) => {
-
           return(
 
             <li key={'tag-list-'+index}>
