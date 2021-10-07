@@ -3,6 +3,7 @@ import styled from "styled-components"
 import {MainHr} from './About'
 
 const BlogItemContainer=styled.div`
+  display:${(props)=>props.status==true ? 'none' : 'block'};
   width:20%;
   margin:2.5%;
   background-color:${({theme})=>theme.blogCard};
@@ -12,6 +13,16 @@ const BlogItemContainer=styled.div`
   -moz-box-shadow: ${({theme})=>theme.blogCardmozBoxShadow};
   box-shadow: ${({theme})=>theme.blogCardBoxShadow};
   transition:600ms all;
+  .recommedButton{
+    width:100%;
+    transition:600ms all;
+    &:hover{
+      background-color:${({theme})=>theme.itemHover};
+      width:60&;
+      color:#fff;
+      border-radius:0;
+    }
+  }
   a{
     text-decoration:none;
     background-color:${({theme})=>theme.blogCard};
@@ -42,6 +53,7 @@ const BlogImage=styled.img`
   width:100%;
   cursor:pointer;
   transition:600ms all;
+  background-color:#eee;
 `
 
 const BlogTitle=styled.div`

@@ -24,9 +24,13 @@ import {MainContext} from './Context'
 
 import axios from 'axios'
 
+import ActivityIndicator from 'react-activity-indicator'
+
 const App=()=>{
 
   const [theme,setTheme]=useState(localStorage.getItem('theme')!='dark' ? 'light' : 'dark')
+
+  
 
   const [maindata,setMainData]=useState(null)
 
@@ -48,13 +52,14 @@ const App=()=>{
       
     axios.post(process.env.REACT_APP_PROXY_URL+''+process.env.REACT_APP_API_BLOGS, {},{headers:{'Content-Type':'application/json','Access-Control-Allow-Origin' : '*'}}).then(function (results) { setData(results.data.data) })
 
+
   }, [])
 
   return (
     <>
 
     {
-      maindata!=null && aboutData!=null && data!=null ? 
+      maindata!=null && aboutData!=null && data!=null  ? 
 
       <MainContext.Provider value={{theme,setTheme,maindata,setMainData,aboutData,data,login,setLogin}}>
       
@@ -136,7 +141,19 @@ const App=()=>{
       
       :
 
-      <React.Fragment/>
+      <div style={{width:'100vw',height:'100vh',display:'flex',justifyContent:'center',alignItems:'center'}}>
+        
+        <ActivityIndicator
+            number={3}
+            diameter={48}
+            borderWidth={4}
+            duration={30}
+            activeColor="#000"
+            borderColor="#ccc"
+            borderRadius="100%" 
+        />
+
+      </div>
     
     }
     

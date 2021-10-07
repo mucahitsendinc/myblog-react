@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 
 import {Container,Content} from '../../components/Styles/Admin/Main'
 
@@ -48,10 +48,24 @@ import WeeklyReport from './Analys/WeeklyReport'
 
 import AnnualReport from './Analys/AnnualReport'
 
+import { AdminContext,useContext } from './AdminContext'
+
+import Notifitaction from '../../components/Admin/Notify.js'
+
 const AdminIndex=(props)=>{
   
   const [open,setOpen]=useState(true)
+
+  const [notify,setNotify]=useState()
   
+  useEffect(() => {
+    if (notify!=null) {
+      setTimeout(() => {
+        setNotify(null)
+      }, 3600);
+    }
+  }, [notify])
+
   document.title = "Blog Yönetim Paneli - Mücahit Sendinç"
 
   const getPage=()=>{
@@ -213,23 +227,26 @@ const AdminIndex=(props)=>{
   
   return (
 
-      <Container>
+      <AdminContext.Provider value={{notify,setNotify}}>
+        <Notifitaction data={notify} closer={setNotify} />
+        <Container>
   
-      <Header open={open} setopen={setOpen} />
-      
-      <Content open={open}>
-        
-        {
+            <Header open={open} setopen={setOpen} />
+            
+            <Content open={open}>
+              
+              {
 
-          getPage()
+                getPage()
 
-        }
+              }
 
-      <Footer copyright="Development By Mücahit Sendinç" />
+            <Footer copyright="Development By Mücahit Sendinç" />
 
-      </Content>
+            </Content>
 
-    </Container>
+          </Container>
+      </AdminContext.Provider>
       
   )
 
