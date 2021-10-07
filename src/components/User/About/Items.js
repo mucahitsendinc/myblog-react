@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {InfoList,SmallItem,MainHr,BigItem,AboutLoading} from '../../Styles/User/About'
+import {InfoList,SmallItem,MainHr,BigItem,AboutLoading} from '../../../Styles/User/About'
 
 import ActivityIndicator from 'react-activity-indicator'
 
@@ -90,7 +90,7 @@ const Items=(props)=>{
             activeColor="#fff"
             borderColor="#ccc"
             borderRadius="100%" 
-        />
+        /> 
       
       </AboutLoading>
     

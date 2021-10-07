@@ -29,7 +29,7 @@ const MenuCloser = styled.div`
   right:0;top:0;
   background-color:#eee;
   z-index:10;
-  cursor:pointer;
+  cursor:pointer; 
   div{
     width:25px;
     margin-left:15px;

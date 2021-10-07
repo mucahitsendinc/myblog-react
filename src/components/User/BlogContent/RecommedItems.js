@@ -1,4 +1,4 @@
-import {  BlogItemContainer,BlogRouter } from '../../Styles/User/BlogContent'
+import {  BlogItemContainer,BlogRouter } from '../../../Styles/User/BlogContent'
 
 import Title from './Title'
 
@@ -10,7 +10,7 @@ import TagList from './TagList'
 
 import Resource from './Resource'
 
-import { MainHr } from '../../Styles/User/About'
+import { MainHr } from '../../../Styles/User/About'
 
 import Date from './Date'
 
@@ -31,7 +31,7 @@ const RecommedItems=(props)=> {
           
           const link=''+recommed.url
           
-          const text="Devamını oku"
+          const text="Devamını oku" 
           
           return(
 

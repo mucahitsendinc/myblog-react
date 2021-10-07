@@ -1,4 +1,4 @@
-import {TitleContainer,TitleText} from '../../Styles/Admin/Header'
+import {TitleContainer,TitleText} from '../../../Styles/Admin/Header'
 
 import {Link} from 'react-router-dom'
 
@@ -17,7 +17,7 @@ const Title=(props)=>{
       <TitleText>
 
         {props.title}
-
+ 
       </TitleText>
 
     </TitleContainer>

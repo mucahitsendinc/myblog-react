@@ -7,7 +7,7 @@ import axios from 'axios'
 const CreateRecommended=(props)=>{
   console.log(props)
   const {setNotify}=useContext(AdminContext)
-  const create=()=>{
+  const create=()=>{ 
 
      axios.post(process.env.REACT_APP_PROXY_URL+''+process.env.REACT_APP_API_CREATE_RECOMMENDED,
      {post:props.id},

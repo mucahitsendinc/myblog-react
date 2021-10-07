@@ -1,4 +1,4 @@
-import {  BlogDescription } from '../../Styles/User/BlogCard'
+import {  BlogDescription } from '../../../Styles/User/BlogCard'
 
 const Description=(props)=>{
 
@@ -18,4 +18,4 @@ const Description=(props)=>{
 
 }
 
-export default Description
+export default Description 

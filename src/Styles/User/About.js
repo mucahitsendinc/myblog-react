@@ -36,7 +36,7 @@ const MainHr=styled.div`
   padding:20px 50px;
   font-weight:500;
   font-size:26px;
-  margin-bottom:10px;
+  margin-bottom:10px; 
   color:${({theme})=>theme.spesificColor};
 `
 

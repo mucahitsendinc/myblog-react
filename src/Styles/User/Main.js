@@ -8,23 +8,23 @@ const Container = styled.div`
 
 const Content = styled.div`
   position:absolute;
-  left:${(props)=>props.open==true ? '25vw' : '3vw'};
-  top:50px;
+  left:${(props)=>props.open==true ? '25vw' : '0vw'};
   overflow-x:hidden;
   height:100%;
   transition:600ms all;
-  width:${(props)=>props.open==true ? '75vw' : '97vw'};
+  width:${(props)=>props.open==true ? '75vw' : '100vw'};
   color:${({theme})=>theme.textColor};
   @media only screen and (max-width:750px){
-    top:50px;
     width:100vw;
-    left:0;
+    display:${(props)=>props.open==true ? 'none' : 'block'};
+    top:50px;
   }
 `
+
 export {
 
   Content,
 
   Container
   
-}
+} 

@@ -1,9 +1,9 @@
 import React,{useState,useLayoutEffect} from 'react'
 
 import axios from 'axios'
-import { AboutLoading, MainHr } from '../../components/Styles/User/About'
+import { AboutLoading, MainHr } from '../../Styles/User/About'
 import BlogItem from '../../components/User/BlogCard/BlogItem';
-import { BlogItemList } from '../../components/Styles/User/BlogCard';
+import { BlogItemList } from '../../Styles/User/BlogCard';
 import  ActivityIndicator from 'react-activity-indicator';
 
 const Home=(props)=>{
@@ -35,7 +35,7 @@ const Home=(props)=>{
 
   }, [])
 
-  return (
+  return ( 
 
       <React.Fragment>
 

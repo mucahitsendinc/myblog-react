@@ -1,4 +1,4 @@
-import {  BlogItemContainer } from '../../Styles/User/BlogCard'
+import {  BlogItemContainer } from '../../../Styles/User/BlogCard'
 
 import Title from './Title'
 
@@ -31,7 +31,7 @@ const BlogItem=(props)=> {
         <TagList tags={tags} name={url} />
 
         <Description desc={description} />
-
+ 
         <GoBlog text={text} link={link} />
 
         <Date date={date} /> 

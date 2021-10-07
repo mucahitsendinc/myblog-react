@@ -1,4 +1,4 @@
-import {BlogImage} from '../../Styles/User/BlogContent'
+import {BlogImage} from '../../../Styles/User/BlogContent'
 
 import { Link } from 'react-router-dom'
 
@@ -16,4 +16,4 @@ const Resource=(props)=> {
 
 }
 
-export default Resource
+export default Resource 

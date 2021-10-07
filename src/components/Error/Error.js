@@ -1,4 +1,4 @@
-import {ErrorContainer,ErrorCode,ErrorMessage,ErrorMessageContainer,CopyRight} from '../Styles/Error'
+import {ErrorContainer,ErrorCode,ErrorMessage,ErrorMessageContainer,CopyRight} from '../../Styles/Error'
 
 import {useHistory} from 'react-router-dom'
 
@@ -17,7 +17,7 @@ const Error=(props)=>{
     <ErrorContainer>
 
       <ErrorMessageContainer>
-
+ 
         <ErrorCode>{props.code}</ErrorCode>
 
         <ErrorMessage>

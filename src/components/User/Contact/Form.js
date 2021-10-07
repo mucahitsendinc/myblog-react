@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 
-import {ContactInput,FormGroup,FormBigGroup,ContactTextArea,Error,Success} from '../../Styles/User/Contact'
+import {ContactInput,FormGroup,FormBigGroup,ContactTextArea,Error,Success} from '../../../Styles/User/Contact'
 
 import {Triangels} from './Triangels'
 
@@ -87,7 +87,7 @@ const FormItems=(props)=>{
           props.status!='comment' ? <Triangels  /> : <React.Fragment/>
         
         }
-
+ 
         <FormGroup>
 
           <ContactInput type="text" value={name} onChange={(e)=>setName(e.target.value)} placeholder="Ad" />

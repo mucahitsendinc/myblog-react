@@ -55,6 +55,6 @@ export {
 
   LoginErrorMessage,
 
-  PostLoadingArea
+  PostLoadingArea 
   
 }

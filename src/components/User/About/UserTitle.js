@@ -1,4 +1,4 @@
-import {Degree,Title} from '../../Styles/User/About'
+import {Degree,Title} from '../../../Styles/User/About'
 
 const UserTitle=(props)=> {
 
@@ -32,6 +32,6 @@ const UserTitle=(props)=> {
 
   )
 
-}
+} 
 
 export {UserTitle}

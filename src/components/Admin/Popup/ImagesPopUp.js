@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react' 
 import ActivityIndicator from 'react-activity-indicator';
 
-import {PopUp} from '../../Styles/Admin/PopUp'
+import {PopUp} from '../../../Styles/Admin/PopUp'
 import axios from 'axios'
 import ImageUpload from '../ImageUpload';
 const ImagesPopUp=(props)=>{  
@@ -20,7 +20,7 @@ const ImagesPopUp=(props)=>{
         setImages(results.data)
       }else{
         setImages('bos')
-      }
+      } 
     }).catch((e)=>{
     })
   }

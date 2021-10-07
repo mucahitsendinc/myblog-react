@@ -16,4 +16,4 @@ const BlogDetail=(props)=> {
 
 }
 
-export default BlogDetail
+export default BlogDetail 

@@ -1,5 +1,5 @@
 
-import {BlogTagList} from '../../Styles/User/BlogContent'
+import {BlogTagList} from '../../../Styles/User/BlogContent'
 
 const TagList=(props)=> {
   
@@ -30,4 +30,4 @@ const TagList=(props)=> {
 
 }
 
-export default TagList
+export default TagList 

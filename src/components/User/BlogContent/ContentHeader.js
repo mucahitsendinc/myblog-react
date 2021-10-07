@@ -1,6 +1,6 @@
 import ContentTagList from './ContentTagList'
 
-import { BlogContentTitle } from '../../Styles/User/BlogContent'
+import { BlogContentTitle } from '../../../Styles/User/BlogContent'
 
 import GoBack from './GoBack'
 
@@ -27,7 +27,7 @@ const ContentHeader=(props)=>{
     </>
 
   )
-
+ 
 }
 
 export default ContentHeader

@@ -1,4 +1,4 @@
-import {ContactTriangelTop,ContactTriangelBottom,ContactTriangelText} from '../../Styles/User/Contact'
+import {ContactTriangelTop,ContactTriangelBottom,ContactTriangelText} from '../../../Styles/User/Contact'
 
 const Triangels=()=>{
 
@@ -21,4 +21,4 @@ const Triangels=()=>{
   )
 
 }
-export {Triangels}
+export {Triangels} 

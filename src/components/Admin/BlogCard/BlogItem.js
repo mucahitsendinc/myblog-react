@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import {  BlogItemContainer } from '../../Styles/User/BlogCard'
+import {  BlogItemContainer } from '../../../Styles/User/BlogCard'
 
 import Title from './Title'
 
@@ -7,7 +7,7 @@ import Description from './Description'
 
 import Resource from './Resource'
 
-import Date from './Date'
+import Date from './Date' 
 
 import CreateRecommended from './CreateRecommended'
 

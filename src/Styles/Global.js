@@ -27,7 +27,7 @@ const GlobalStyle = createGlobalStyle`
     background: transparent; /* make scrollbar transparent */
   }
   @mixin hideScrollbar {
-    &::-webkit-scrollbar {
+    &::-webkit-scrollbar { 
       width: 0 !important
     }
     -ms-overflow-style: none;

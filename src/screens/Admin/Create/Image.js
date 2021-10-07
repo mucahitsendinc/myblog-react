@@ -2,7 +2,7 @@ import React,{useState,useRef,useEffect} from 'react'
 
 
 
-import {AdminContent} from '../../../components/Styles/Admin/Content'
+import {AdminContent} from '../../../Styles/Admin/Content'
 
 import ImageUpload from '../../../components/Admin/ImageUpload'
 
@@ -40,7 +40,7 @@ const CreateImage=(props)=>{
 
 
 
-      </AdminContent>
+      </AdminContent> 
 
   )
 

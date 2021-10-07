@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Menu,CloseHeader,SetMenu } from '../../Styles/User/Header'
+import { Menu,CloseHeader,SetMenu } from '../../../Styles/User/Header'
 
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 
@@ -34,4 +34,4 @@ const Header=(props)=> {
 
 }
 
-export default Header
+export default Header 

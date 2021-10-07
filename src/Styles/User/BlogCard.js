@@ -69,7 +69,7 @@ const BlogTagList=styled.ul`
   margin:0;
   display:flex;
   flex-wrap:wrap;
-  li{
+  li{ 
     padding:.5% 1%;
     font-size:11px;
     color:${({theme})=>theme.blogCardTagColor};

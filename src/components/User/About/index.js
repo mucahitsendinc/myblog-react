@@ -31,7 +31,7 @@ const AboutItems=()=>{
     <Items about={aboutData} />
 
     </>
-
+ 
   )
 
 }

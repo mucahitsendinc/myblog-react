@@ -2,7 +2,7 @@ import React,{useLayoutEffect,useState} from 'react'
 
 import axios from 'axios'
 import BlogItem from '../../../components/Admin/BlogCard/index'
-import {AboutLoading} from '../../../components/Styles/User/About'
+import {AboutLoading} from '../../../Styles/User/About'
 
 import ActivityIndicator from 'react-activity-indicator'
 const CreateRecommended=()=>{
@@ -32,7 +32,7 @@ const CreateRecommended=()=>{
               <BlogItem itemData={data} proces="CreateRecommended" />
         )
         
-        :
+        : 
         <AboutLoading>
         
           <ActivityIndicator

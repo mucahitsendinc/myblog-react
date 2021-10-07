@@ -14,4 +14,4 @@ const ActivePosts=()=>{
 
 }
 
-export default ActivePosts
+export default ActivePosts 

@@ -22,7 +22,7 @@ const AdminContent=styled.div`
     align-items:center;
     padding:30px;
   }
-  .goBackButton{
+  .goBackButton{ 
     position:absolute;
     text-align:center;
     right:10px;

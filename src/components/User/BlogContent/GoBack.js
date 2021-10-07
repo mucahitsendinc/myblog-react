@@ -1,6 +1,6 @@
 import {useHistory} from 'react-router-dom'
 
-import {GoBackButton} from '../../Styles/User/BlogContent'
+import {GoBackButton} from '../../../Styles/User/BlogContent'
 
 const GoBack=()=>{
   
@@ -18,4 +18,4 @@ const GoBack=()=>{
 
 }
 
-export default GoBack
+export default GoBack 

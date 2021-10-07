@@ -14,4 +14,4 @@ const ArchivePosts=()=>{
 
 }
 
-export default ArchivePosts
+export default ArchivePosts 

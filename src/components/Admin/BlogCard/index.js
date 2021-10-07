@@ -1,10 +1,10 @@
 import React, {useState} from 'react'
 
-import {BlogItemList,MainHr,PageButton,PageButtonList} from '../../Styles/User/BlogCard'
+import {BlogItemList,MainHr,PageButton,PageButtonList} from '../../../Styles/User/BlogCard'
 
 import BlogItem from './BlogItem'
 
-import {AboutLoading} from '../../Styles/User/About'
+import {AboutLoading} from '../../../Styles/User/About'
 
 import ActivityIndicator from 'react-activity-indicator'
 
@@ -155,7 +155,7 @@ const BlogItems=(props)=> {
               data.length<20 ? <React.Fragment/> : pageNumberList!=undefined  ? getPageNumbers(pageNumberList) : getPageNumbers(pageNumbers)
             
             }
-            {
+            { 
               data.length==0 ? 
               <div style={{padding:50,fontSize:23,textAlign:'center'}}>
                 Öne çıkanlara eklenecek gönderi bulunamadı, sıralama yükseltmek için önerilenleri yönet sayfasını kullanın.

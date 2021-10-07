@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 
-import {NotifyContainer} from '../Styles/Admin/Notification'
+import {NotifyContainer} from '../../Styles/Admin/Notification'
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
 
@@ -20,7 +20,7 @@ const Notify=(props)=>{
             </div>
           </NotifyContainer>
           :
-          <React.Fragment/>
+          <React.Fragment/> 
         }
     </React.Fragment>
   )

@@ -1,5 +1,5 @@
 
-import {  GoBlogText } from '../../Styles/User/BlogContent'
+import {  GoBlogText } from '../../../Styles/User/BlogContent'
 
 import { Link } from 'react-router-dom'
 
@@ -25,4 +25,4 @@ const GoBlog=(props)=>{
 
 }
 
-export default GoBlog
+export default GoBlog 

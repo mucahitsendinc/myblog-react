@@ -1,6 +1,6 @@
 
 
-import {  BlogTitle } from '../../Styles/User/BlogCard'
+import {  BlogTitle } from '../../../Styles/User/BlogCard'
 
 import { Link } from 'react-router-dom'
 
@@ -22,4 +22,4 @@ const Title=(props)=>{
 
 }
 
-export default Title
+export default Title 

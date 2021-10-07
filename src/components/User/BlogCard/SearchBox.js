@@ -1,4 +1,4 @@
-import {SearchContainer,SearchInput,SearchButton} from '../../Styles/User/Search'
+import {SearchContainer,SearchInput,SearchButton} from '../../../Styles/User/Search'
 
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
@@ -32,7 +32,7 @@ const SearchBox=()=> {
 
         </SearchButton>
         
-      </form>
+      </form> 
     
     </SearchContainer>
 

@@ -1,6 +1,6 @@
 import React,{useState,useEffect,useRef} from 'react'
 
-import {AdminContent,Settings} from '../../../components/Styles/Admin/Content'
+import {AdminContent,Settings} from '../../../Styles/Admin/Content'
 
 import { useHistory } from 'react-router-dom';
 
@@ -14,7 +14,11 @@ import axios from 'axios'
 
 import ActivityIndicator from 'react-activity-indicator';
 
+import { AdminContext,useContext} from '../AdminContext'
+
 const CreatePost=()=>{
+
+  const {setNotify}=useContext(AdminContext)
 
   const history=useHistory();
 
@@ -22,19 +26,15 @@ const CreatePost=()=>{
 
   const [post,setPost]=useState(false);
 
-  const [error,setError]=useState(null);
+  const [tags,setTags]=useState('');
 
-  const [success,setSuccess]=useState(null);
+  const [title,setTitle]=useState('');
 
-  const [tags,setTags]=useState(null);
+  const [pImage,setPImage]=useState('');
 
-  const [title,setTitle]=useState(null);
+  const [content,setContent]=useState('');
 
-  const [pImage,setPImage]=useState(null);
-
-  const [content,setContent]=useState(null);
-
-  const [desc,setDesc]=useState(null);
+  const [desc,setDesc]=useState('');
 
   const [popup,setPopup]=useState(false);
 
@@ -76,9 +76,8 @@ const CreatePost=()=>{
       axios.post(process.env.REACT_APP_PROXY_URL+''+process.env.REACT_APP_API_CREATE_POST,{ image:pImage==null ? selectedImage : pImage,title:title,content:content,description:desc,tags:tag},{headers:{'Content-Type':'application/json','Access-Control-Allow-Origin' : '*','Authorization':'Bearer '+localStorage.getItem('token')}})
       .then(function (results) {
         
-        setError(null)
-
-        setSuccess(results.data.message)
+        setNotify(null)
+        setNotify({status:'success',message:results.data.message})
 
         setTitle('')
 
@@ -98,9 +97,8 @@ const CreatePost=()=>{
 
       }).catch(function(results){
 
-        setSuccess(null)
-
-        setError(results.response.data.message)
+        setNotify(null)
+        setNotify({status:'error',message:results.response.data.message})
 
         setPost(false)
 
@@ -221,32 +219,7 @@ const CreatePost=()=>{
             
             <div className="SettingsFormButton">
               
-              {
-                error!=null ?
-
-                <div className="errorArea">
-
-                    {error}
-
-                </div>
-
-                :
-
-                (
-
-                  success!=null ?
-
-                  <div className="successArea">
-
-                    {success}
-
-                  </div>
-
-                  :
-
-                  <React.Fragment/>
-                )
-              }
+              
               {
                 (
                     post==true ? 

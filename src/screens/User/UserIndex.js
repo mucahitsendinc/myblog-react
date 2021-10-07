@@ -10,7 +10,7 @@ import Blogs from './Blogs'
 
 import Contact from './Contact'
 
-import {Container,Content} from '../../components/Styles/User/Main'
+import {Container,Content} from '../../Styles/User/Main'
 
 import Header from '../../components/User/Menu/Header'
 
@@ -34,7 +34,7 @@ const UserIndex=(props)=>{
 
         return(
           
-          <Home />
+          <Home /> 
 
         )
 

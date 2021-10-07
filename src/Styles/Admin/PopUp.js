@@ -63,7 +63,7 @@ const PopUp=styled.div`
     }
   }
 `
-
+ 
 export {
 
   PopUp

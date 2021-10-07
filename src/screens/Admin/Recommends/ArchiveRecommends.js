@@ -14,4 +14,4 @@ const ArchiveRecommends=()=>{
 
 }
 
-export default ArchiveRecommends
+export default ArchiveRecommends 

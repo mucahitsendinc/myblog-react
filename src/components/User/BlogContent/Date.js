@@ -1,4 +1,4 @@
-import { BlogDate } from '../../Styles/User/BlogContent'
+import { BlogDate } from '../../../Styles/User/BlogContent'
 
 const Date=(props)=>{
 
@@ -18,4 +18,4 @@ const Date=(props)=>{
 
 }
 
-export default Date
+export default Date 

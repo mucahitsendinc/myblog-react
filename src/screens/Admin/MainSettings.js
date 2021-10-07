@@ -2,7 +2,7 @@ import React,{useState,useRef,useEffect} from 'react'
 
 import axios from 'axios'
 
-import {AdminContent,Settings} from '../../components/Styles/Admin/Content'
+import {AdminContent,Settings} from '../../Styles/Admin/Content'
 
 import { useHistory } from 'react-router'
 import ImagesPopUp from '../../components/Admin/Popup/ImagesPopUp'
@@ -10,13 +10,13 @@ import { MainContext,useContext } from '../../Context'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faImages } from '@fortawesome/free-solid-svg-icons';
 import ActivityIndicator from 'react-activity-indicator';
-
+import {AdminContext} from './AdminContext'
 const MainSettings=(props)=>{
+
+  const {setNotify} = useContext(AdminContext)
 
   const [popup,setPopup]=useState(false);
   const [post,setPost]=useState(false);
-  const [error,setError]=useState(null);
-  const [success,setSuccess]=useState(null);
   const history=useHistory()
 
   const {maindata,setMainData}=useContext(MainContext)
@@ -37,12 +37,7 @@ const MainSettings=(props)=>{
   const [selectedFavicon,setSelectedFavicon]=useState(null)
   const [selectedProfileImage,setSelectedProfileImage]=useState(null)
 
-  useEffect(() => {
-    setTimeout(() => {
-      setError(null)
-      setSuccess(null)
-    }, 3000);
-  }, [error,success])
+  
 
   useEffect(() => {
     setPopup(false)
@@ -54,7 +49,7 @@ const MainSettings=(props)=>{
     
 
   }, [selectedFavicon,selectedProfileImage])
-
+ 
   const updateSettings=async(e)=>{
     e.preventDefault()
     if(post==false ){
@@ -72,19 +67,16 @@ const MainSettings=(props)=>{
         social_github:github,
         social_linkedin:linkedin,
         social_instagram:instagram
-
       },
       {headers:{'Content-Type':'application/json','Access-Control-Allow-Origin' : '*','Authorization':'Bearer '+localStorage.getItem('token')}})
       .then(function (results) {
-        console.log(results)
-        setError(null)
-        setSuccess(results.data.message)
+        setNotify(null)
+        setNotify({status:'success',message:results.data.message})
        
         setPost(false)
       }).catch(function(results){
-        console.log(results.response)
-        setSuccess(null)
-        setError(results.response.data.message)
+        setNotify(null)
+        setNotify({status:'success',message:results.response.data.message})
         setPost(false)
       })
     }
@@ -186,21 +178,6 @@ const MainSettings=(props)=>{
             </div>
             
             <div className="SettingsFormButton">
-              {
-                error!=null ?
-                <div className="errorArea">
-                    {error}
-                </div>
-                :
-                (
-                  success!=null ?
-                  <div className="successArea">
-                    {success}
-                  </div>
-                  :
-                  <></>
-                )
-              }
               {
               (
                   post==true ? 

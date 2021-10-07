@@ -22,7 +22,14 @@ const NotifyContainer=styled(NotifyAnimator)`
   width:300px;
   padding:10px 5px;
   background-color:${(props)=>props.status=='error' ? '#eb4d4b' : '#6ab04c'};
-  color:${(props)=>props.status=='error' ? '#fff' : '#000'};
+  color:${(props)=>props.status=='error' ? '#fff' : '#eee'};
+  -webkit-box-shadow: 0px 0px 26px -6px ${(props)=>props.status=='error' ? 'rgba(255,0,0,1)' : 'rgba(0,255,0,1)'};
+  -moz-box-shadow: 0px 0px 26px -6px ${(props)=>props.status=='error' ? 'rgba(255,0,0,1)' : 'rgba(0,255,0,1)'};
+  box-shadow: 0px 0px 26px -6px ${(props)=>props.status=='error' ? 'rgba(255,0,0,1)' : 'rgba(0,255,0,1)'};
+  border-radius: 5px 5px 5px 5px;
+  -moz-border-radius: 5px 5px 5px 5px;
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border: 1px solid ${(props)=>props.status=='error' ? '#ff0000' : '#2dff00'};
   position:fixed;
   z-index:200;
   top:20px;
@@ -31,7 +38,7 @@ const NotifyContainer=styled(NotifyAnimator)`
     position:absolute;
     right:3px;
     top:0;
-    svg{
+    svg{ 
       cursor:pointer;
       transition:500ms all;
       &:hover{

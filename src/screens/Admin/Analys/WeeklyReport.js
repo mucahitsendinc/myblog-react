@@ -14,4 +14,4 @@ const WeeklyReport=()=>{
 
 }
 
-export default WeeklyReport
+export default WeeklyReport 

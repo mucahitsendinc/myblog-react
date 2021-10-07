@@ -1,12 +1,12 @@
 import {useState} from 'react'
 
-import {BlogItemList,MainHr,PageButton,PageButtonList} from '../../Styles/User/BlogCard'
+import {BlogItemList,MainHr,PageButton,PageButtonList} from '../../../Styles/User/BlogCard'
 
 import BlogItem from './BlogItem'
 
 import SearchBox from './SearchBox'
 
-import {AboutLoading} from '../../Styles/User/About'
+import {AboutLoading} from '../../../Styles/User/About'
 
 import ActivityIndicator from 'react-activity-indicator'
 
@@ -168,7 +168,7 @@ const BlogItems=()=> {
           
           <AboutLoading>
         
-          <ActivityIndicator
+          <ActivityIndicator 
               number={3}
               diameter={28}
               borderWidth={3}

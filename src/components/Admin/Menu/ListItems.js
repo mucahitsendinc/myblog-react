@@ -1,12 +1,12 @@
 import {useState} from 'react'
 
-import {MenuContainer} from '../../Styles/Admin/Header' 
+import {MenuContainer} from '../../../Styles/Admin/Header' 
 
 import Title from './Title'
 
 import {Switch} from '@material-ui/core';
 
-import { ThemeChanger } from '../../Styles/User/Header';
+import { ThemeChanger } from '../../../Styles/User/Header';
 
 import Items from './Items'
 
@@ -17,7 +17,7 @@ const ListItems=(props)=>{
   const [checked,setChecked]=useState(true)
 
   const {setTheme,theme}=useContext(MainContext)
-
+ 
 
   return (
     <MenuContainer>

@@ -1,6 +1,6 @@
 import React,{useState} from 'react' 
 
-import {HeaderContainer,CloseHeader} from '../../Styles/Admin/Header'
+import {HeaderContainer,CloseHeader} from '../../../Styles/Admin/Header'
 
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 
@@ -14,7 +14,7 @@ const Header=(props)=>{
 
   return (
     
-    <>
+    <> 
 
       <HeaderContainer open={open}>
 

@@ -14,4 +14,4 @@ const Analys=()=>{
 
 }
 
-export default Analys
+export default Analys 

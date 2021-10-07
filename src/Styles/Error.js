@@ -24,7 +24,7 @@ color:#eee;
 `
 
 const ErrorMessageContainer=styled.div`
-  padding:30px;
+  padding:30px; 
   border-radius:30px;
   -webkit-box-shadow: 0px 0px 153px 0px rgba(255,255,255,1);
   -moz-box-shadow: 0px 0px 153px 0px rgba(255,255,255,1);

@@ -28,7 +28,7 @@ const LightTheme = {
   PlusbuttonHoverBackground:'rgba(0,0,0,.4)',
   PlusbuttonColor:'#000',
   AdminMenuItemBackground:'rgba(0,0,0,.2)',
-  AdminContentBackground:'#dfe6e9',
+  AdminContentBackground:'#dfe6e9', 
 }
 
 const DarkTheme = {

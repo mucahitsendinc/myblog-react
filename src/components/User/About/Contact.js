@@ -1,4 +1,4 @@
-import {UserInfos} from '../../Styles/User/About'
+import {UserInfos} from '../../../Styles/User/About'
 
 import { faMapMarkerAlt,faEnvelope,faPhone   } from '@fortawesome/free-solid-svg-icons'
 
@@ -31,7 +31,7 @@ const Contact=(props)=>{
           <FontAwesomeIcon  icon={faEnvelope} /> 
 
           {
-
+ 
             email
           
           }

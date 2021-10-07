@@ -1,6 +1,6 @@
 import {useState,useEffect} from 'react'
 
-import {MenuItemList,MenuItem,SubMenu,LogOut} from '../../Styles/Admin/Header' 
+import {MenuItemList,MenuItem,SubMenu,LogOut} from '../../../Styles/Admin/Header' 
 
 import {Link,useLocation,useHistory} from 'react-router-dom'
 
@@ -72,23 +72,23 @@ const Items=(props)=>{
 
         active='paylasimlari-yonet'
 
-      }else if (path.indexOf('yorumlar'!=-1)) {
-
+      }else if (path.indexOf('yorumlar')!=-1) {
+        console.log(path)
         active="yorumlari-yonet"
 
-      }else if (path.indexOf('onerilenler'!=-1)) {
+      }else if (path.indexOf('onerilenler')!=-1) {
 
         active='onerilenleri-yonet'
 
-      }else if (path.indexOf('istatistik'!=-1)) {
+      }else if (path.indexOf('istatistik')!=-1) {
 
         active='istatistikler'
 
-      }else if (path.indexOf('yeni'!=-1)) {
+      }else if (path.indexOf('yeni')!=-1) {
 
         active='yeni-icerik'
 
-      }else if (path.indexOf('genel-ayarlar'!=-1)) {
+      }else if (path.indexOf('genel-ayarlar')!=-1) {
 
         active='genel-ayarlar'
 
@@ -196,6 +196,8 @@ const Items=(props)=>{
 
         }
 
+      }else if(path.indexOf('genel-ayarlar')!=-1){
+        active='genel-ayarlar'
       }
 
     }
@@ -215,7 +217,6 @@ const Items=(props)=>{
   }, [props.open])
 
   const getSmallMenuChecker=(string="yok")=>{
-
     if(string!="yok"){
 
       History.push(string)
@@ -291,7 +292,7 @@ const Items=(props)=>{
               <Link  to="/yonetici/yeni-oneri">Yeni Öneri</Link>
 
             </SubMenu>
-
+ 
             <SubMenu activeSub={active==('yeni-fotograf') ? true : false}>
 
               <Link  to="/yonetici/yeni-fotograf">Yeni Fotograf</Link>

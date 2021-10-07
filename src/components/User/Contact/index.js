@@ -1,7 +1,7 @@
 
 import {useState,useEffect} from 'react'
 
-import {ContactForm} from '../../Styles/User/Contact'
+import {ContactForm} from '../../../Styles/User/Contact'
 
 import {FormItems} from './Form'
 
@@ -32,5 +32,5 @@ const ContactItems=(props)=>{
   )
 
 }
-
+ 
 export default ContactItems

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {FooterContainer} from "../../Styles/User/Footer";
+import {FooterContainer} from "../../../Styles/User/Footer";
 
 
 import { MainContext,useContext } from '../../../Context'
@@ -36,7 +36,7 @@ const Foot=()=>{
       </h2>
     
     </FooterContainer>
-  
+   
   )
 
 }

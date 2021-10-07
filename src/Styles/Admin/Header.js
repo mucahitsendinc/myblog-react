@@ -103,7 +103,7 @@ const MenuItem=styled.li`
     &:hover-within{
       border-left:3px solid #eee;
       color:#eee;
-      background-color:rgba(255,255,255,.3);
+      background-color:rgba(255,255,255,.3); 
     }
   }
   &:hover{

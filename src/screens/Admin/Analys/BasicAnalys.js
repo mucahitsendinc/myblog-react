@@ -14,4 +14,4 @@ const BasicAnalys=()=>{
 
 }
 
-export default BasicAnalys
+export default BasicAnalys 

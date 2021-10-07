@@ -1,4 +1,4 @@
-import {  GoBlogText } from '../../Styles/User/BlogCard'
+import {  GoBlogText } from '../../../Styles/User/BlogCard'
 
 import { Link } from 'react-router-dom'
 
@@ -24,4 +24,4 @@ const GoBlog=(props)=>{
 
 }
 
-export default GoBlog
+export default GoBlog 

@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react'
 
-import {Container,Content} from '../../components/Styles/Admin/Main'
+import {Container,Content} from '../../Styles/Admin/Main'
 
 import Header from '../../components/Admin/Menu'
 
@@ -232,7 +232,7 @@ const AdminIndex=(props)=>{
         <Container>
   
             <Header open={open} setopen={setOpen} />
-            
+             
             <Content open={open}>
               
               {

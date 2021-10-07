@@ -2,7 +2,7 @@ import React from 'react'
 
 import SearchBox from '../BlogCard/SearchBox'
 
-import { BlogContent } from '../../Styles/User/BlogContent'
+import { BlogContent } from '../../../Styles/User/BlogContent'
 
 import ContentItem from './ContentItem'
 
@@ -28,4 +28,4 @@ const Blog=(props)=> {
 
 }
 
-export default Blog
+export default Blog 

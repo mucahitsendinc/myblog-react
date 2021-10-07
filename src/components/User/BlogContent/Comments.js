@@ -1,6 +1,6 @@
-import {CommentContainer,CommentName,Comment,CommentDate,CommentContent} from '../../Styles/User/BlogContent'
+import {CommentContainer,CommentName,Comment,CommentDate,CommentContent} from '../../../Styles/User/BlogContent'
 
-import { MainHr } from '../../Styles/User/About'
+import { MainHr } from '../../../Styles/User/About'
 
 import {FormItems} from '../Contact/Form'
 
@@ -33,7 +33,7 @@ const Comments=(props)=>{
                         <CommentName>{comment.name}</CommentName>
 
                         <CommentDate>{comment.date}</CommentDate>
-
+ 
                         <CommentContent>{comment.comment}</CommentContent>
                   
                     </Comment> 

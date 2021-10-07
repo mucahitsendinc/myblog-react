@@ -2,7 +2,7 @@ import {useEffect,useLayoutEffect,useState} from 'react'
 
 import Comments from './Comments'
 
-import { BlogContentContainer,Content } from '../../Styles/User/BlogContent'
+import { BlogContentContainer,Content } from '../../../Styles/User/BlogContent'
 
 import ContentHeader from './ContentHeader'
 
@@ -10,7 +10,7 @@ import RecommedItems from './RecommedItems'
 
 import {useLocation} from 'react-router-dom'
 
-import {AboutLoading} from '../../Styles/User/About'
+import {AboutLoading} from '../../../Styles/User/About'
 
 import ActivityIndicator from 'react-activity-indicator'
 
@@ -43,7 +43,7 @@ const ContentItem=(props)=>{
 
       {
         data!=null && recommendeds!=null ?
-
+ 
         <>
 
           <BlogContentContainer open={props.open}>

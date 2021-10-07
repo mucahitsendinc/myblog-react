@@ -14,4 +14,4 @@ const DailyReport=()=>{
 
 }
 
-export default DailyReport
+export default DailyReport 

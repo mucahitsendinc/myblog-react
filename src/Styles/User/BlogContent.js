@@ -215,7 +215,7 @@ const GoBackButton=styled.button`
   top:10px;
   right:10px;
   padding:10px 40px;
-`
+` 
 
 const Content=styled.div`
   display:block;

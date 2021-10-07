@@ -1,4 +1,4 @@
-import { SocialList } from '../../Styles/User/Header'
+import { SocialList } from '../../../Styles/User/Header'
 
 import { faGithub,faLinkedin,faInstagram } from '@fortawesome/free-brands-svg-icons'
 
@@ -34,4 +34,4 @@ const Social=(props)=>{
 
 }
 
-export default Social
+export default Social 

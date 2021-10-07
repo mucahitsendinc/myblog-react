@@ -14,11 +14,11 @@ import LogOut from './screens/Admin/LogOut';
 
 import UserIndex from './screens/User/UserIndex'
 
-import { DarkTheme,LightTheme } from "./components/Styles/Theme";
+import { DarkTheme,LightTheme } from "./Styles/Theme";
 
 import { ThemeProvider } from "styled-components";
 
-import GlobalStyle from './components/Styles/Global';
+import GlobalStyle from './Styles/Global';
 
 import {MainContext} from './Context'
 
@@ -29,8 +29,6 @@ import ActivityIndicator from 'react-activity-indicator'
 const App=()=>{
 
   const [theme,setTheme]=useState(localStorage.getItem('theme')!='dark' ? 'light' : 'dark')
-
-  
 
   const [maindata,setMainData]=useState(null)
 
@@ -55,7 +53,7 @@ const App=()=>{
 
   }, [])
 
-  return (
+  return ( 
     <>
 
     {

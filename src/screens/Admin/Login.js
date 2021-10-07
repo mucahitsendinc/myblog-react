@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react'
 
-import {LoginContainer,LoginErrorMessage,PostLoadingArea} from '../../components/Styles/Admin/Login'
+import {LoginContainer,LoginErrorMessage,PostLoadingArea} from '../../Styles/Admin/Login'
 
 import {useHistory} from 'react-router-dom'
 
@@ -41,7 +41,7 @@ const Login=(props)=>{
         setLogin(true)
 
         localStorage.setItem('login','true')
-
+ 
         localStorage.setItem('token',results.data.token)
 
      })

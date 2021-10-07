@@ -1,13 +1,13 @@
 
 
-import {  BlogTitle } from '../../Styles/User/BlogCard'
+import {  BlogTitle } from '../../../Styles/User/BlogCard'
 
 
 
 const Title=(props)=>{
 
   return(
-
+ 
   
       
       <BlogTitle>
