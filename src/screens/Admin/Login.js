@@ -28,6 +28,7 @@ const Login=(props)=>{
     history.push('/yonetici')
   }
 
+
   const loginIn=async(e)=>{
     e.preventDefault()
 
@@ -47,9 +48,9 @@ const Login=(props)=>{
      })
     .catch(function(e){ 
 
-        setPost(false)
+        setPost(false) 
 
-        setError('Erişim parolası hatalı')
+        setError(e.response.data.message)
         
      })
     

@@ -4,7 +4,7 @@ import {MenuItemList,MenuItem,SubMenu,LogOut} from '../../../Styles/Admin/Header
 
 import {Link,useLocation,useHistory} from 'react-router-dom'
 
-import { faArrowDown,faThumbsUp,faComment,faHome,faChartArea,faPlus,faSignOutAlt,faCog } from '@fortawesome/free-solid-svg-icons'
+import { faArrowDown,faThumbsUp,faComment,faHome,faChartArea,faPlus,faSignOutAlt,faCog, faUserCog } from '@fortawesome/free-solid-svg-icons'
 
 import {faBlogger} from '@fortawesome/free-brands-svg-icons'
 
@@ -44,7 +44,13 @@ const Items=(props)=>{
 
               (
 
-                'yonetici'
+                Location.pathname.indexOf('yonetici-ayarlari')!=-1 ? 'yonetici-ayarlari' :
+
+                (
+
+                  'yonetici'
+
+                )
 
               )
 
@@ -91,6 +97,10 @@ const Items=(props)=>{
       }else if (path.indexOf('genel-ayarlar')!=-1) {
 
         active='genel-ayarlar'
+
+      }else if (path.indexOf('yonetici-ayarlari')!=-1) {
+
+        active='yonetici-ayarlari'
 
       }else{
 
@@ -198,6 +208,8 @@ const Items=(props)=>{
 
       }else if(path.indexOf('genel-ayarlar')!=-1){
         active='genel-ayarlar'
+      }else if(path.indexOf('yonetici-ayarlari')!=-1){
+        active='yonetici-ayarlari'
       }
 
     }
@@ -258,6 +270,14 @@ const Items=(props)=>{
           <FontAwesomeIcon icon={faCog}/>
 
           <Link to="/yonetici/genel-ayarlar">Genel Ayarlar</Link>
+
+        </MenuItem>
+
+        <MenuItem onClick={()=>getSmallMenuChecker('/yonetici/yonetici-ayarlari')} active={ active==('yonetici-ayarlari') && (drop=='' || drop=='yonetici-ayarlari') ? true : false }>
+
+          <FontAwesomeIcon icon={faUserCog}/>
+
+          <Link to="/yonetici/genel-ayarlar">Yönetici Ayarları</Link>
 
         </MenuItem>
 

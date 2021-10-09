@@ -10,6 +10,8 @@ import Admin from './Home'
 
 import MainSettings from './MainSettings'
 
+import AdminSettings from './AdminSettings'
+
 import ArchivePosts from './Posts/ArchivePosts'
 
 import ActivePosts from './Posts/ActivePosts'
@@ -56,7 +58,7 @@ const AdminIndex=(props)=>{
   
   const [open,setOpen]=useState(true)
 
-  const [notify,setNotify]=useState()
+  const [notify,setNotify]=useState(null)
   
   useEffect(() => {
     if (notify!=null) {
@@ -84,6 +86,13 @@ const AdminIndex=(props)=>{
         return(
           
           <MainSettings />
+
+        )
+      case 'AdminSettings':
+
+        return(
+          
+          <AdminSettings />
 
         )
       case 'ArchivePosts':

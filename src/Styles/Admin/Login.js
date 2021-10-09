@@ -29,7 +29,16 @@ const LoginContainer=styled.div`
       background-color:transparent;
     }
   }
-
+  @media only screen and (max-width:1050px){
+    form{
+      width:40%;
+    }
+  }
+  @media only screen and (max-width:750px){
+    form{
+      width:80%;
+    }
+  }
 `
 
 const LoginErrorMessage=styled.div`

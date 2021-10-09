@@ -76,7 +76,7 @@ const MainSettings=(props)=>{
         setPost(false)
       }).catch(function(results){
         setNotify(null)
-        setNotify({status:'success',message:results.response.data.message})
+        setNotify({status:'error',message:results.response.data.message})
         setPost(false)
       })
     }
