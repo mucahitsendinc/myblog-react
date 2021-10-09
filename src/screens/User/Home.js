@@ -5,6 +5,7 @@ import { AboutLoading, MainHr } from '../../Styles/User/About'
 import BlogItem from '../../components/User/BlogCard/BlogItem';
 import { BlogItemList } from '../../Styles/User/BlogCard';
 import  ActivityIndicator from 'react-activity-indicator';
+import {Helmet} from "react-helmet";
 
 const Home=(props)=>{
 
@@ -38,8 +39,14 @@ const Home=(props)=>{
   return ( 
 
       <React.Fragment>
-
-      {
+        <Helmet>
+            <title>Ana Sayfa</title>
+            <link rel="canonical" href="https://www.mucahitsendinc.com" />
+            <meta name="title" content="Mücahit Sendinç Kişisel Blog Sayfası" />
+            <meta name="description" content="Merhaba, ben Mücahit SENDİNÇ. Web ve Mobil yazılım geliştiricisi olarak çalışmakta ve aynı zamanda eğitim görmekteyim. 6 Yıl önce hobi olarak başlayan bu yazılım maceram son 1 sene içerisinde bir iş haline geldi ve kendimi bu konuda geliştirmeye hızla devam ediyorum. Bir günlük olarak sayfamda içerik yayınlıyorum." />
+            <meta name="keywords" content="mücahit sendinç, kişisel blog, yazılım günlüğüm, özgün blog sayfası"/>
+        </Helmet>
+  {
 
         recommendeds!=null && posts!=null ?
 

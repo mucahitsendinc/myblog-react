@@ -16,6 +16,8 @@ import ActivityIndicator from 'react-activity-indicator'
 
 import axios from 'axios'
 
+import {Helmet} from "react-helmet"
+
 const ContentItem=(props)=>{
 
   const location=useLocation()
@@ -45,6 +47,13 @@ const ContentItem=(props)=>{
         data!=null && recommendeds!=null ?
  
         <>
+          <Helmet>
+              <title>{data.detail.title}</title>
+              <link rel="canonical" href={"https://www.mucahitsendinc.com"+location.pathname} />
+              <meta name="title" content={data.detail.title} />
+              <meta name="description" content={data.detail.description.substring(0,160)} />
+              <meta name="keywords" content={data.detail.keywords==undefined ? 'mücahit sendinç, kişisel web sayfası, özgün içerikler' : data.detail.keywords} />
+          </Helmet>
 
           <BlogContentContainer open={props.open}>
 

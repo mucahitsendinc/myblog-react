@@ -18,14 +18,16 @@ import Footer from '../../components/User/Footer'
 
 import { MainContext,useContext } from '../../Context'
 
+import useWindowDimensions from './../../components/useWindow';
+
 const UserIndex=(props)=>{
   
-  const [open,setOpen]=useState(true)
+  const { height, width } = useWindowDimensions();
+
+  const [open,setOpen]=useState(width<=750 ? false : true)
 
   const {maindata} = useContext(MainContext)
   
-  document.title = "Mücahit Sendinç"
-
   const getPage=()=>{
     
     switch (props.page) {

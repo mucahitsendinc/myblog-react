@@ -2,7 +2,7 @@
   "name": "blog",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://mucahitsendinc.com",
+  "homepage": "https://www.mucahitsendinc.com",
   "dependencies": {
     "@babel/plugin-transform-runtime": "^7.15.0",
     "@fortawesome/fontawesome": "^1.1.8",
@@ -30,6 +30,7 @@
     "react-pose": "^4.0.10",
     "react-router-dom": "^5.3.0",
     "react-scripts": "4.0.3",
+    "react-snap": "^1.23.0",
     "styled-components": "^5.3.1",
     "web-vitals": "^1.1.2"
   },

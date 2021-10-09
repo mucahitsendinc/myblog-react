@@ -54,9 +54,13 @@ import { AdminContext,useContext } from './AdminContext'
 
 import Notifitaction from '../../components/Admin/Notify.js'
 
+import useWindowDimensions from './../../components/useWindow';
+
 const AdminIndex=(props)=>{
   
-  const [open,setOpen]=useState(true)
+  const { height, width } = useWindowDimensions();
+
+  const [open,setOpen]=useState(width<=750 ? false : true)
 
   const [notify,setNotify]=useState(null)
   
@@ -67,8 +71,6 @@ const AdminIndex=(props)=>{
       }, 3600);
     }
   }, [notify])
-
-  document.title = "Blog Yönetim Paneli - Mücahit Sendinç"
 
   const getPage=()=>{
     
