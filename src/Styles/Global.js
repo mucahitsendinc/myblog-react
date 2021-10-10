@@ -22,6 +22,18 @@ const GlobalStyle = createGlobalStyle`
     -khtml-user-select: none;
     -webkit-user-select: none;
   }
+  pre code,pre code span{
+    -ms-user-select: text;
+    user-select:text;
+    -webkit-user-drag: text;
+    -khtml-user-drag: text;
+    -moz-user-drag: text;
+    -o-user-drag: text;
+    user-drag: text;
+    -moz-user-select: -moz-text;
+    -khtml-user-select: text;
+    -webkit-user-select: text;
+  }
   ::-webkit-scrollbar {
     width: 0px;
     background: transparent; /* make scrollbar transparent */

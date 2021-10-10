@@ -218,11 +218,61 @@ const GoBackButton=styled.button`
 ` 
 
 const Content=styled.div`
-  display:block;
   padding:20px;
-  font-size:12px;
-  h1{
-    font-size:18px;
+  overflow:scroll!important;
+  pre code{
+    ::-webkit-scrollbar{
+      width: 7px;
+      height: 7px;
+    }
+    ::-webkit-scrollbar-thumb{
+      background: #B3AFB3;
+      border-radius: 0px;
+    }
+    ::-webkit-scrollbar-thumb:hover{
+      background: #B3AFB3;
+    }
+    ::-webkit-scrollbar-track{
+      background: #F0F0F0;
+      border-radius: 0px;
+      box-shadow: inset 0px 0px 0px 0px #F0F0F0;
+      -ms-user-select:all!important;
+      user-select:all!important;
+      -webkit-user-drag: all!important;
+      -khtml-user-drag: all!important;
+      -moz-user-drag: all!important;
+      -o-user-drag: all!important;
+      user-drag: all!important;
+      -moz-user-select: all!important;
+      -khtml-user-select: all!important;
+      -webkit-user-select: all!important;
+      user-select:all !important;
+    }
+    .code-badge {
+      cursor:pointer;
+      padding: 8px !important;
+      background: #ccc !important;
+      color: black !important;
+     
+    }
+    .code-badge-copy-icon {
+      font-size: 1.3em !important;
+    }
+  
+  }
+  .copysvg{
+  }
+  .copysvg:before{
+    content: 'Kopyala';
+    color:#fff;
+    font-size:10px;
+  }
+  .copyedsvg{
+  }
+  .copyedsvg:before{
+    content: 'Kopyalandı';
+    color:#fff;
+    font-size:10px;
   }
 `
 

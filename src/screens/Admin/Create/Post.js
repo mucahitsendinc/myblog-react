@@ -16,6 +16,9 @@ import ActivityIndicator from 'react-activity-indicator';
 
 import { AdminContext,useContext} from '../AdminContext'
 
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css'
+import QuillToolbar,{ modules,formats } from '../../../components/Admin/EditorToolbar';
 const CreatePost=()=>{
 
   const {setNotify}=useContext(AdminContext)
@@ -205,17 +208,16 @@ const CreatePost=()=>{
 
             </div>
 
-            <div className="SettingsFormGroup">
-
-              <label>
-
-                İçerik
-
-              </label>
-
-              <textarea value={content} onChange={(e)=>setContent(e.target.value)} placeholder="İçerik"></textarea>
-
-            </div>
+          
+            <QuillToolbar />
+            <ReactQuill
+              theme="snow"
+              value={content}
+              onChange={setContent}
+              placeholder={"İçerik"}
+              modules={modules}
+              formats={formats}
+            />
             
             <div className="SettingsFormButton">
               
