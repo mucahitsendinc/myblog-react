@@ -40,6 +40,12 @@ const ContentItem=(props)=>{
     axios.post(process.env.REACT_APP_PROXY_URL+''+process.env.REACT_APP_API_RECOMMENDED, {},{headers:{'Content-Type':'application/json'}}).then(function (response) {  setRecommendeds(response.data.data) }) .catch(function (error) { console.log(error); });
     
   }, [])
+  
+  useEffect(() => {
+    setTimeout(() => {
+      hljs.highlightAll();
+    }, 10);
+  }, [content])
 
   useEffect(() => {
 
@@ -47,22 +53,16 @@ const ContentItem=(props)=>{
   
     axios.post(process.env.REACT_APP_PROXY_URL+''+process.env.REACT_APP_API_BLOG_DETAIL, { url:location.pathname.replace('/blogum/','') },{headers:{'Content-Type':'application/json'}}).then(function (response) {  setData(response.data.data); 
     // const detail=response.data.data.detail.content.replace('<pre class="ql-syntax" spellcheck="false">','<pre class="ql-syntax" spellcheck="false"><code class="language-javascript" spellcheck="false">')
-    const detail=response.data.data.detail.content.replaceAll('<pre class="ql-syntax" spellcheck="false">','<pre class="ql-syntax" spellcheck="false"><code>').replaceAll('</pre>','</code></pre>')
-    setContent(detail)
+    setContent(response.data.data.detail.content.replaceAll('<pre class="ql-syntax" spellcheck="false">','<pre class="ql-syntax" spellcheck="false"><code>').replaceAll('</pre>','</code></pre>'))
     setTimeout(() => {
-    hljs.highlightAll();
-    var pres = document.querySelectorAll("pre>code");
-    for (var i = 0; i < pres.length; i++) {
-       hljs.highlightBlock(pres[i]);
-    }
-    
-    // add HighlightJS-badge (options are optional)
-    var options = {   // optional
-       copyIconClass: "copysvg",
-       checkIconClass: "copyedsvg"
-    };
-    window.highlightJsBadge(options);
-    }, 0);
+      
+      var pres = document.querySelectorAll("pre>code");
+      for (var i = 0; i < pres.length; i++) {
+        hljs.highlightBlock(pres[i]);
+      }
+      var options = {   copyIconClass: "copysvg",checkIconClass: "copyedsvg"};
+      window.highlightJsBadge(options);
+    }, 10);
   }) .catch(function (error) { console.log(error) }) 
   }, [location.pathname])
 

@@ -144,7 +144,7 @@ const App=()=>{
         
         <ActivityIndicator
             number={3}
-            diameter={48}
+            diameter={28}
             borderWidth={4}
             duration={30}
             activeColor="#000"

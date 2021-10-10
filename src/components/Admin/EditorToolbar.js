@@ -1,6 +1,7 @@
 import React from "react";
 import { Quill } from "react-quill";
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faImages } from '@fortawesome/free-solid-svg-icons';
 // Custom Undo button icon component for Quill editor. You can import it directly
 // from 'quill/assets/icons/undo.svg' but I found that a number of loaders do not
 // handle them correctly
@@ -41,15 +42,18 @@ Quill.register(Size, true);
 // Add fonts to whitelist and register them
 const Font = Quill.import("formats/font");
 Font.whitelist = [
+
   "arial",
   "comic-sans",
   "courier-new",
   "georgia",
   "helvetica",
-  "lucida"
+  "lucida",
+  "roboto",
+  "azeret"
 ];
 Quill.register(Font, true);
-
+ 
 // Modules object for setting up the Quill editor
 export const modules = {
   toolbar: {
@@ -99,6 +103,8 @@ export const QuillToolbar = () => (
         <option value="georgia">Georgia</option>
         <option value="helvetica">Helvetica</option>
         <option value="lucida">Lucida</option>
+        <option value="roboto">Roboto</option>
+        <option value="azeret">Azeret</option>
       </select>
       <select className="ql-size" defaultValue="medium">
         <option value="extra-small">Boyut 1</option>
@@ -138,6 +144,7 @@ export const QuillToolbar = () => (
     <span className="ql-formats">
       <button className="ql-link" />
       <button className="ql-image" />
+      
       <button className="ql-video" />
     </span>
     <span className="ql-formats">

@@ -86,8 +86,12 @@ const BlogItemContainer=styled.div`
 
 const BlogImage=styled.img`
   width:100%;
+  height:150px;
   cursor:pointer;
   transition:600ms all;
+  @media only screen and (max-width:750px){
+    height:400px;
+  }
 `
 
 const BlogTitle=styled.div`

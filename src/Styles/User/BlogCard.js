@@ -51,16 +51,21 @@ const BlogItemContainer=styled.div`
 
 const BlogImage=styled.img`
   width:100%;
+  height:170px;
   cursor:pointer;
   transition:600ms all;
   background-color:#eee;
+  @media only screen and (max-width:750px){
+    height:400px;
+  }
 `
 
 const BlogTitle=styled.div`
   padding:0px 5px;
   cursor:pointer;
   font-size:15px;
-  
+  min-height:20px;
+  max-height:20px;
 `
 
 const BlogTagList=styled.ul`
@@ -69,6 +74,8 @@ const BlogTagList=styled.ul`
   margin:0;
   display:flex;
   flex-wrap:wrap;
+  min-height:20px;
+  max-height:20px;
   li{ 
     padding:.5% 1%;
     font-size:11px;
@@ -86,6 +93,8 @@ const BlogTagList=styled.ul`
 const BlogDescription=styled.div`
   max-height:100px;
   font-size:10px;
+  min-height:70px;
+  max-height:70px;
   padding:10px;
 `
 
