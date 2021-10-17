@@ -40,11 +40,13 @@ const Home=(props)=>{
 
       <React.Fragment>
         <Helmet>
-            <title>Ana Sayfa</title>
-            <link rel="canonical" href="https://www.mucahitsendinc.com" />
+            <title>Ana Sayfa - Mücahit Sendinç</title>
             <meta name="title" content="Mücahit Sendinç Kişisel Blog Sayfası" />
             <meta name="description" content="Merhaba, ben Mücahit SENDİNÇ. Web ve Mobil yazılım geliştiricisi olarak çalışmakta ve aynı zamanda eğitim görmekteyim. 6 Yıl önce hobi olarak başlayan bu yazılım maceram son 1 sene içerisinde bir iş haline geldi ve kendimi bu konuda geliştirmeye hızla devam ediyorum. Bir günlük olarak sayfamda içerik yayınlıyorum." />
             <meta name="keywords" content="mücahit sendinç, kişisel blog, yazılım günlüğüm, özgün blog sayfası"/>
+            <meta property="og:title" content="Mücahit Sendinç - Kişisel Web Sayfası" />
+            <meta property="og:description" content="Merhaba, ben Mücahit SENDİNÇ. Web ve Mobil yazılım geliştiricisi olarak çalışmakta ve aynı zamanda eğitim görmekteyim. 6 Yıl önce hobi olarak başlayan bu yazılım maceram son 1 sene içerisinde bir iş haline geldi ve kendimi bu konuda geliştirmeye hızla devam ediyorum. Bir günlük olarak sayfamda içerik yayınlıyorum." />
+            <link rel="canonical" href={process.env.REACT_APP_PUBLIC_URL} />
         </Helmet>
   {
 

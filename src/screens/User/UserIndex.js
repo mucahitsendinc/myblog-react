@@ -8,6 +8,8 @@ import BlogDetail from './BlogDetail'
 
 import Blogs from './Blogs'
 
+import BlogSearch from './BlogSearch'
+
 import Contact from './Contact'
 
 import {Container,Content} from '../../Styles/User/Main'
@@ -61,6 +63,13 @@ const UserIndex=(props)=>{
         return(
         
           <Blogs />
+        
+        ) 
+      case 'BlogSearch':
+        
+        return(
+        
+          <BlogSearch />
         
         ) 
 

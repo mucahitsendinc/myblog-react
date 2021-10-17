@@ -76,6 +76,8 @@ const App=()=>{
                   <Route path="/hakkimda"  component={()=> <UserIndex page="About"  /> }  />
 
                   <Route exact path="/blogum"  component={()=> <UserIndex page="Blogs"  /> }  />
+                  
+                  <Route path="/blogum/ara/:searchtext"  component={()=> <UserIndex page="BlogSearch"  /> }  />
 
                   <Route path="/blogum/:blog"  component={()=>  <UserIndex page="BlogDetail" /> }  />
                   

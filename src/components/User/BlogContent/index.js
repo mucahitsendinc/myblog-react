@@ -14,7 +14,7 @@ const Blog=(props)=> {
 
     <>
 
-      <SearchBox/>
+      <SearchBox type="content" />
 
       <BlogContent >
 

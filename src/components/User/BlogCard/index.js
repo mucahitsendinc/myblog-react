@@ -12,9 +12,11 @@ import ActivityIndicator from 'react-activity-indicator'
 
 import { MainContext,useContext } from '../../../Context'
 
-const BlogItems=()=> {
+const BlogItems=(props)=> {
   
   const {data}=useContext(MainContext)
+
+  const [blogdata,setBlogData]=useState(data)
   
   const [pageNumberList,setPageNumberList]=useState(undefined)
 
@@ -24,7 +26,7 @@ const BlogItems=()=> {
   
   const dataPerPage=20
 
-  for (let index = 0; index < Math.ceil(data.length/20); index++) {
+  for (let index = 0; index < Math.ceil(blogdata.length/20); index++) {
 
     pageNumbers.push({number:index,active:index==0? true : false})
 
@@ -34,7 +36,7 @@ const BlogItems=()=> {
 
     return(
  
-      data.slice(currentPage*dataPerPage,currentPage*dataPerPage+dataPerPage).map(function(element){
+      blogdata.slice(currentPage*dataPerPage,currentPage*dataPerPage+dataPerPage).map(function(element){
         return(
           <BlogItem key={element.unid} itemData={element} />
 
@@ -72,7 +74,7 @@ const BlogItems=()=> {
         
         }
 
-        <PageButton disabled={currentPage+1== Math.ceil(data.length/dataPerPage) ? true : false} onClick={()=>pageUp()} > {'>'} </PageButton>
+        <PageButton disabled={currentPage+1== Math.ceil(blogdata.length/dataPerPage) ? true : false} onClick={()=>pageUp()} > {'>'} </PageButton>
       
       </PageButtonList>
     
@@ -137,15 +139,15 @@ const BlogItems=()=> {
   return (
     
     <>
-      <SearchBox/>
+      <SearchBox data={data} setdata={setBlogData} searching={props.searching} />
 
-        <MainHr>Mücahit'in Paylaşımları</MainHr>
+        <MainHr> {props.searching!= undefined ? `"${props.searching}" ile ilgili arama sonuçları` : "Mücahit'in Paylaşımları"} </MainHr>
 
         <BlogItemList>
 
         {
 
-          data!=null ? 
+          blogdata!=null ? 
           
           <>
 
@@ -158,7 +160,7 @@ const BlogItems=()=> {
           
             {
             
-              data.length<20 ? <></> : pageNumberList!=undefined  ? getPageNumbers(pageNumberList) : getPageNumbers(pageNumbers)
+              blogdata.length<20 ? <></> : pageNumberList!=undefined  ? getPageNumbers(pageNumberList) : getPageNumbers(pageNumbers)
             
             }
 

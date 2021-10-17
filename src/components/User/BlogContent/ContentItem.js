@@ -76,10 +76,13 @@ const ContentItem=(props)=>{
         <>
           <Helmet>
               <title>{data.detail.title}</title>
-              <link rel="canonical" href={"https://www.mucahitsendinc.com"+location.pathname} />
+              <link rel="canonical" href={process.env.REACT_APP_PUBLIC_URL+location.pathname} />
               <meta name="title" content={data.detail.title} />
               <meta name="description" content={data.detail.description.substring(0,160)} />
               <meta name="keywords" content={data.detail.keywords==undefined ? 'mücahit sendinç, kişisel web sayfası, özgün içerikler' : data.detail.keywords} />
+              <meta property="og:title" content={data.detail.title} />
+              <meta property="og:description" content={data.detail.description.substring(0,160)} />
+              <link rel="canonical" href={process.env.REACT_APP_PUBLIC_URL+location.pathname} />
           </Helmet>
 
           <BlogContentContainer open={props.open}>
