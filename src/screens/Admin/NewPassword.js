@@ -9,12 +9,15 @@ import ActivityIndicator from 'react-activity-indicator'
 import { MainContext,useContext } from '../../Context'
 
 import axios from 'axios'
+import {useParams} from 'react-router-dom'
 
-const Login=(props)=>{
+const NewPassword=(props)=>{
+  const params=useParams()
   
   const history = useHistory()
 
   const [password,setPassword]=useState('')
+  const [rpassword,setRPassword]=useState('')
 
   const [post,setPost]=useState(false)
 
@@ -32,27 +35,39 @@ const Login=(props)=>{
   const loginIn=async(e)=>{
     e.preventDefault()
 
-    axios.post(process.env.REACT_APP_PROXY_URL+''+process.env.REACT_APP_API_LOGIN
-    , {password:md5(password)}
-    ,{headers:{'Content-Type':'application/json'}})
-    .then(function (results) { 
+     if(password!=rpassword){
+       setError('Parolalar eşleşmiyor')
+     }else if(password.length<10){
+       setError('Parolanız çok kısa')
+     }else if(password.length>30){
+       setError('Parolanız çok uzun')
+     }else {
+      axios.post(process.env.REACT_APP_PROXY_URL+''+process.env.REACT_APP_API_RESET_PASSWORD
+      , {token:params.token,newaccess:md5(password),rnewaccess:md5(rpassword)}
+      ,{headers:{'Content-Type':'application/json'}})
+      .then(function (results) { 
 
-        setError('')  
+          //console.log(results)
 
-        setLogin(true)
+          setError('')  
+          
+          localStorage.removeItem('forgot')
 
-        localStorage.setItem('login','true')
- 
-        localStorage.setItem('token',results.data.token)
+          setLogin(true)
 
-     })
-    .catch(function(e){ 
+          localStorage.setItem('login','true')
+  
+          localStorage.setItem('token',results.data.token)
 
-        setPost(false) 
+      })
+      .catch(function(e){ 
 
-        setError(e.response.data.message)
-        
-     })
+          setPost(false) 
+          //console.log(e.response)
+          setError(e.response.data.message)
+          
+      })
+     }
     
   }
 
@@ -89,7 +104,8 @@ const Login=(props)=>{
             <React.Fragment/>
           }
 
-          <input type="password" value={password}  onChange={(e)=>setPassword(e.target.value)} placeholder="Erişim Parolası"/>
+          <input type="password" value={password}  onChange={(e)=>setPassword(e.target.value)} placeholder="Yeni Erişim Parolası"/>
+          <input type="password" value={rpassword}  onChange={(e)=>setRPassword(e.target.value)} placeholder="Tekrar Yeni Erişim Parolası"/>
 
           {
 
@@ -112,9 +128,9 @@ const Login=(props)=>{
             :
             
             <>
-            <button type="submit" disabled={post}>Giriş Yap</button>
+            <button type="submit" disabled={post}>Erişim Parolamı Güncelle</button>
             <div style={{textAlign:'center',marginTop:20}}>
-              <Link title="Erişim parolamı unuttum" to={"parola-sifirla"} style={{textDecoration:'none',color:'#fff'}} >Erişim parolamı unuttum</Link>
+              <Link title="Erişim parolamı unuttum" to={"/yonetici/giris"} style={{textDecoration:'none',color:'#fff'}} >Giriş Yap</Link>
             </div>
             </>
           }
@@ -127,4 +143,4 @@ const Login=(props)=>{
   
 }
 
-export default Login
+export default NewPassword

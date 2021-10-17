@@ -10,6 +10,10 @@ import AdminIndex from './screens/Admin/AdminIndex'
 
 import AdminLogin from './screens/Admin/Login'
 
+import AdminPasswordReset from './screens/Admin/PasswordReset'
+
+import AdminNewPassword from './screens/Admin/NewPassword'
+
 import LogOut from './screens/Admin/LogOut';
 
 import UserIndex from './screens/User/UserIndex'
@@ -73,6 +77,10 @@ const App=()=>{
                 
                   <Route path="/yonetici/giris"  component={()=> <AdminLogin  /> }  />
 
+                  <Route exact path="/yonetici/parola-sifirla"  component={()=> <AdminPasswordReset  /> }  />
+                  
+                  <Route path="/yonetici/parola-sifirla/:token"  component={()=> <AdminNewPassword  /> }  />
+
                   <Route path="/hakkimda"  component={()=> <UserIndex page="About"  /> }  />
 
                   <Route exact path="/blogum"  component={()=> <UserIndex page="Blogs"  /> }  />
@@ -88,6 +96,7 @@ const App=()=>{
                   <Route exact path="/yonetici"  component={()=> login==true ? <AdminIndex page="Home" />  : <Error code="404" message="Böyle bir sayfa bulunamadı" /> }  />
 
                   <Route path="/yonetici/genel-ayarlar"  component={()=> login==true ? <AdminIndex page="MainSettings" />  : <Error code="404" message="Böyle bir sayfa bulunamadı" /> }  />
+                  
                   <Route path="/yonetici/yonetici-ayarlari"  component={()=> login==true ? <AdminIndex page="AdminSettings" />  : <Error code="404" message="Böyle bir sayfa bulunamadı" /> }  />
 
                   <Route path="/yonetici/tum-paylasimlar"  component={()=> login==true ? <AdminIndex page="Posts" />  : <Error code="404" message="Böyle bir sayfa bulunamadı" /> }  />

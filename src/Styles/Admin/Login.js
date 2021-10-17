@@ -17,9 +17,9 @@ const LoginContainer=styled.div`
     input,button{
       width:100%;
       margin-top:10px;
-      height:50px;
+      min-height:50px;
       padding:10px;
-      font-size:20px;
+      font-size:18px;
       transition:500ms all;
     }
     input:hover,input:focus{
